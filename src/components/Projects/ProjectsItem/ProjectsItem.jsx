@@ -1,4 +1,5 @@
 import * as projectActions from '/home/tatyana/studies-projects/aspirity-practice/src/redux/projectReducer';
+import './ProjectItem.css';
 
 function ProjectsItem ({dispatch, project}) {
 
@@ -7,7 +8,7 @@ function ProjectsItem ({dispatch, project}) {
   }
 
   return (
-    <div key={project.id} className='projectItem'>
+    <div className='projectItem'>
       <div className='projectName'>{project.name}</div>
       <div className='projectDescription'>{project.description}</div>
       <button className='editBtn'>ET</button>        

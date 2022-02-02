@@ -21,13 +21,13 @@ function Projects() {
  }
 
   return (
-      <div>
-        <div>
-          <button className='addBtn' onClick={() => addProject(prompt('Project name'), prompt('Description'))}>Add project</button>
-        </div>
+      <div >
+        <button className='addBtn' onClick={() => 
+              addProject(prompt('Project name'), prompt('Description'))
+            }>+ Add project</button>
         <div>
           {projects.map(project => 
-            <ProjectItem dispatch={dispatch} project={project}/>
+            <ProjectItem key={project.id} dispatch={dispatch} project={project}/>
           )}
         </div>
       </div>
