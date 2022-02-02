@@ -1,10 +1,11 @@
 import "./App.css";
-import Example from "./components/Example/Example";
+import Login from "./components/Authorization/LogIn/Login";
+import Registration from "./components/Authorization/Registration/Registration";
 
 function App() {
   return (
     <div>
-      <Example />
+      <Registration />
     </div>
   );
 }
