@@ -1,11 +1,8 @@
 import { useState } from "react";
+import { registration } from "../../../redux/actions/loginActions";
 import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
-
-const onSubmit = () => {
-  console.log("Submit");
-};
 
 const Registration = () => {
   const [login, setLogin] = useState("");
@@ -18,6 +15,7 @@ const Registration = () => {
       setValidatePassword(true);
     }
   };
+
   return (
     <Form name={"Регистрация"}>
       <InputField
@@ -44,12 +42,12 @@ const Registration = () => {
         onBlur={() => passwordHandler()}
       />
       <Button
-        type='submit'
+        type='button'
         text={"Зарегистрироваться"}
         disabled={
           login === "" || name === "" || password === "" || !validatePassword
         }
-        onSubmit={() => onSubmit()}
+        onClick={() => registration(login, password, name)}
       />
     </Form>
   );
