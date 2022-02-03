@@ -16,7 +16,7 @@ const Button = ({
     return link === "#" ? (
       <button
         disabled={!!disabled}
-        onSubmit={onSubmit}
+        onClick={onClick}
         style={{ width: width + "px" }}
         className={classNames({
           button: true,
@@ -29,7 +29,7 @@ const Button = ({
       <NavLink to={link}>
         <button
           disabled={!!disabled}
-          onSubmit={onSubmit}
+          onClick={onClick}
           style={{ width: width + "px" }}
           className={classNames({
             button: true,
