@@ -1,56 +1,23 @@
-.projectItem {
+.project {
   display: flex;
-  position: relative;
-  width: 800px;
-  height: 204px;
-  left: 0px;
-  top: 0px;
-
-  background: #FFFFFF;
-}
-
-.projectName {
-
-  position: relative;
-
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  /*если на странице харакетристики текста один, то лучше запихивать в высше по иерархии и менять уже в отличающихся элемента */
+  color: #262626;
   font-size: 14px;
   line-height: 20px;
-  display: flex;
-  align-items: center;
-
-  color: #262626;
 }
-
-.projectDescription {
-  position: relative;
-
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-
-  color: #262626;
+.project__name {
+  width: 200px;
+  margin-right: 40px;
 }
-
-.editBtn {
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  left: 1105px;
-  top: 485px;
-
-/* Иконки */
-
-border: 2px solid #BFBFBF;
+.project__description {
+  width: 600px;
+  margin-right: 70px;
 }
-
-.delBtn {
-  position: absolute;
- background: #BFBFBF;
+.project__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }

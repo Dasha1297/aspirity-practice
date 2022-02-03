@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import * as projectActions from '/home/tatyana/studies-projects/aspirity-practice/src/redux/projectReducer';
+import * as projectActions from '../../redux/projectReducer';
 import './Projects.css'
 import { v4 as uuid } from 'uuid';
 import ProjectItem from './ProjectsItem/ProjectsItem';

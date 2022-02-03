@@ -1,8 +1,11 @@
-import React from 'react';
-import * as projectActions from '/home/tatyana/studies-projects/aspirity-practice/src/redux/projectReducer';
+import React, { useState } from 'react';
+import * as projectActions from '../../../redux/projectReducer';
 import './ProjectItem.css';
+import Modal from '../../Modal/Modal';
 
 function ProjectsItem ({dispatch, project}) {
+  const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
+  const [modalDelPrjctActive, setModalDelPrjctActive] = useState(false);
 
   const removeProject = (project) => {
     dispatch(projectActions.removeProjectAction(project.id))
@@ -10,12 +13,26 @@ function ProjectsItem ({dispatch, project}) {
   
 
   return (
-          <div className='projectItem'>
-              <div className='projectName'>{project.name}</div>
-              <div className='projectDescription'>{project.description}</div>
-              <button className='editBtn'>ET</button> 
-              <button className='delBtn' onClick={() => removeProject(project)}>RM</button>  
-          </div>  
+    <div className='project'>
+        <div className='project__name'>{project.name}</div>
+        <div className='project__description'>{project.description}</div>
+        <div className='project__actions'>
+          <button onClick={() => setModalEditPrjctActive(true)}>ET</button> 
+          <button onClick={() => setModalDelPrjctActive(true)}>RM</button>
+        </div>
+        
+        <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive}>
+            <form>
+              <input placeholder={project.name} />
+              <input placeholder={project.description} />
+              <button>Save</button>
+            </form>
+        </Modal>
+        <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
+            <p>Are you sure you want to delete the project?</p>
+            <button onClick={() => removeProject(project)}>Yes</button>
+        </Modal>
+    </div>       
   )
 }
 
