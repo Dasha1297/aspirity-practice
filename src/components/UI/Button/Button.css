@@ -1,0 +1,17 @@
+.button {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 40px;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.button__blue {
+  background-color: #1037aa;
+  color: white;
+  border: none;
+}
