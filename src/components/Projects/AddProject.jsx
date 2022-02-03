@@ -9,11 +9,12 @@ import Button from '../UI/Button/Button';
 
 function AddProject () {
   
-  const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
   const dispatch = useDispatch()
 
-  const addProject = (name, description, event) => {
+  const addProject = (event) => {
+
     event.preventDefault()
 
     const project = {
@@ -22,6 +23,8 @@ function AddProject () {
       description,
    }
    dispatch(projectActions.addProjectAction(project))
+   setName('')
+   setDescription('')
    
   }
 
@@ -42,12 +45,8 @@ function AddProject () {
           <Button
             type='button'
             text={"Save"}
-            disabled={
-              name === "" || description === "" 
-            }
             onClick={addProject}
           />
-          {/* <button onClick={() => addProject(name, description)}>Save</button> */}
       </Form>
     
   )
