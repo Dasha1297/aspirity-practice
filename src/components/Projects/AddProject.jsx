@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import Form from '../Form/Form';
-//import Button from "../UI/Button/Button";
 import * as projectActions from '../../redux/projectReducer';
 import { v4 as uuid } from 'uuid';
 import InputField from "../UI/InputField/InputField";
@@ -36,14 +35,6 @@ function AddProject () {
             placeholder={"Description"}
             type={"text"}
           />
-          {/* <Button
-            type='submit'
-            text={"Save"}
-            disabled={
-              name === "" || description === ""
-            }
-            onSubmit={() => console.log('work')}
-          /> */}
           <button onClick={() => addProject(name, description)}>Save</button>
     </Form>
     
