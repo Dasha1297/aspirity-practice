@@ -1,26 +1,15 @@
 .projectItem {
   display: flex;
-  position: relative;
-  width: 800px;
-  height: 204px;
-  left: 0px;
-  top: 0px;
-
-  background: #FFFFFF;
+  background: #ffffff;
+  width: 600px;
 }
 
 .projectName {
-
-  position: relative;
-
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
-  display: flex;
-  align-items: center;
-
   color: #262626;
 }
 
@@ -45,12 +34,44 @@
   left: 1105px;
   top: 485px;
 
-/* Иконки */
+  /* Иконки */
 
-border: 2px solid #BFBFBF;
+  border: 2px solid #bfbfbf;
 }
 
 .delBtn {
   position: absolute;
- background: #BFBFBF;
+  background: #bfbfbf;
+}
+
+/*Сейчас идет тенденция на адаптив, а это значит, что мы стилизуем объекты так,
+ чтобы они одинаково смотрелись на различных устройствах.
+ https://www.youtube.com/c/FreelancerLifeStyle - тут много полезного про верстку, стилизацию и.т.п.
+ Я редко использую poaition и top, bottom и.т.д
+ В большинстве случаев достаточно flex и grid.
+ Внизу пример того как сделала бы я
+ */
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  /*если на странице харакетристики текста один, то лучше запихивать в высше по иерархии и менять уже в отличающихся элемента */
+  color: #262626;
+  font-size: 14px;
+  line-height: 20px;
+}
+.project__name {
+  width: 200px;
+  margin-right: 40px;
+}
+.project__description {
+  width: 600px;
+  margin-right: 70px;
+}
+.project__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
