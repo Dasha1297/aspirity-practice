@@ -8,9 +8,8 @@ function ProjectsItem ({dispatch, project}) {
   const [modalDelPrjctActive, setModalDelPrjctActive] = useState(false);
 
   const removeProject = (project) => {
-    dispatch(projectActions.removeProjectAction(project.id))
-  }
-  
+    dispatch(projectActions.removeProjectAction(project.id));
+  };
 
   return (
     <div className='project'>
@@ -37,4 +36,3 @@ function ProjectsItem ({dispatch, project}) {
 }
 
 export default ProjectsItem;
-

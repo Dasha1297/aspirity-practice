@@ -28,6 +28,7 @@ function Projects() {
             }>+ Add project</button>
         </div>
         <div>
+          <h2></h2>
           {projects.map(project => 
             <ProjectItem key={project.id} dispatch={dispatch} project={project}/>
           )}
