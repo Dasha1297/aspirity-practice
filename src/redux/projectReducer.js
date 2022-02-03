@@ -1,5 +1,14 @@
 const defaultState = {
-  projects: []
+  projects: [{
+    id: 111,
+    name: "My first project",
+    description: "Creating kanbanboard"
+  },
+  {
+    id: 222,
+    name: "My second project",
+    description: "Creating todo list"
+  }]
 }
 
 //const ADD_PROJECTS = "ADD_PROJECTS";

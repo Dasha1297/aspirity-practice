@@ -4,21 +4,28 @@ import Form from '../Form/Form';
 import * as projectActions from '../../redux/projectReducer';
 import { v4 as uuid } from 'uuid';
 import InputField from "../UI/InputField/InputField";
+import Button from '../UI/Button/Button';
 
 
 function AddProject () {
   
-  const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
   const dispatch = useDispatch()
 
-  const addProject = (name, description) => {
+  const addProject = (event) => {
+
+    event.preventDefault()
+
     const project = {
       id: uuid(),
       name,
       description,
    }
    dispatch(projectActions.addProjectAction(project))
+   setName('')
+   setDescription('')
+   
   }
 
   return (
@@ -35,8 +42,12 @@ function AddProject () {
             placeholder={"Description"}
             type={"text"}
           />
-          <button onClick={() => addProject(name, description)}>Save</button>
-    </Form>
+          <Button
+            type='button'
+            text={"Save"}
+            onClick={addProject}
+          />
+      </Form>
     
   )
 }
