@@ -8,6 +8,7 @@
   width: 606px;
   height: 288px;
   background: url("../../../assets/authorization/home__logo.svg");
+  margin-right: 50px;
 }
 .home__buttons {
   display: grid;

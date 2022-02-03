@@ -7,7 +7,12 @@ const Home = () => {
       <div className='home__logo'></div>
       <div className='home__buttons'>
         <Button text={"Войти"} link='/login' width={"175"} />
-        <Button text={"Зарегестрироваться"} link='/signup' width={"175"} />
+        <Button
+          text={"Зарегестрироваться"}
+          link='/signup'
+          width={"175"}
+          color='blue'
+        />
       </div>
     </div>
   );

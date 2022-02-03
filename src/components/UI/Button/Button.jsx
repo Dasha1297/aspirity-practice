@@ -1,5 +1,6 @@
 import "./Button.css";
 import { NavLink } from "react-router-dom";
+import classNames from "classnames";
 
 const Button = ({
   text,
@@ -11,14 +12,16 @@ const Button = ({
   onSubmit,
   disabled,
 }) => {
-  console.log(width);
   if (type === "button") {
     return link === "#" ? (
       <button
         disabled={!!disabled}
         onSubmit={onSubmit}
-        style={{ background: color, width: width + "px" }}
-        className='button'
+        style={{ width: width + "px" }}
+        className={classNames({
+          button: true,
+          button__blue: color === "blue",
+        })}
       >
         {text}
       </button>
@@ -27,8 +30,11 @@ const Button = ({
         <button
           disabled={!!disabled}
           onSubmit={onSubmit}
-          style={{ background: color, width: width + "px" }}
-          className='button'
+          style={{ width: width + "px" }}
+          className={classNames({
+            button: true,
+            button__blue: color === "blue",
+          })}
         >
           {text}
         </button>
@@ -39,8 +45,11 @@ const Button = ({
       <button
         disabled={!!disabled}
         onSubmit={onSubmit}
-        style={{ background: color, width: width + "px" }}
-        className='button'
+        style={{ width: width + "px" }}
+        className={classNames({
+          button: true,
+          button__blue: color === "blue",
+        })}
       >
         {text}
       </button>

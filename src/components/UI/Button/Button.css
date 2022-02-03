@@ -9,3 +9,9 @@
   line-height: 20px;
   font-weight: 400;
 }
+
+.button__blue {
+  background-color: #1037aa;
+  color: white;
+  border: none;
+}
