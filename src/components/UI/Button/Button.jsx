@@ -1,23 +1,45 @@
 import "./Button.css";
+import { NavLink } from "react-router-dom";
 
 const Button = ({
   text,
   color = "white",
-  link,
+  link = "#",
   type = "button",
   width,
   onClick,
   onSubmit,
   disabled,
 }) => {
+  console.log(width);
   if (type === "button") {
-    return <button>{text}</button>;
+    return link === "#" ? (
+      <button
+        disabled={!!disabled}
+        onSubmit={onSubmit}
+        style={{ background: color, width: width + "px" }}
+        className='button'
+      >
+        {text}
+      </button>
+    ) : (
+      <NavLink to={link}>
+        <button
+          disabled={!!disabled}
+          onSubmit={onSubmit}
+          style={{ background: color, width: width + "px" }}
+          className='button'
+        >
+          {text}
+        </button>
+      </NavLink>
+    );
   } else if (type === "submit") {
     return (
       <button
         disabled={!!disabled}
         onSubmit={onSubmit}
-        style={{ background: color }}
+        style={{ background: color, width: width + "px" }}
         className='button'
       >
         {text}

@@ -1,0 +1,15 @@
+.home {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home__logo {
+  width: 606px;
+  height: 288px;
+  background: url("../../../assets/authorization/home__logo.svg");
+}
+.home__buttons {
+  display: grid;
+  gap: 30px;
+}
