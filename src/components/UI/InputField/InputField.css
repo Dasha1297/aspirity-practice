@@ -1,0 +1,13 @@
+inputField {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 40px;
+  outline: none;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  height: 40px;
+}
+.inputField:not(:last-child) {
+  margin-bottom: 30px;
+}

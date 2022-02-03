@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import * as projectActions from '../../redux/projectReducer';
 import './Projects.css'
-import { v4 as uuid } from 'uuid';
+import AddProject from './AddProject';
+import Modal from '../Modal/Modal';
 import ProjectItem from './ProjectsItem/ProjectsItem';
 
 function Projects() {
@@ -11,27 +11,20 @@ function Projects() {
   const dispatch = useDispatch()
   const projects = useSelector(state => state.projects)
 
-  const addProject = (name, description) => {
-    const project = {
-      id: uuid(),
-      name,
-      description,
-   }
-   dispatch(projectActions.addProjectAction(project))
- }
+  const [modalAddProjectActive, setModalAddProjectActive] = useState(false);
 
   return (
       <div className='wrapper'>
         <div>
-          <button className='addBtn' onClick={() => 
-              addProject(prompt('Project name'), prompt('Description'))
-            }>+ Add project</button>
+          <button className='addBtn' onClick={() => setModalAddProjectActive(true)}>+ Add project</button> 
         </div>
+        <Modal active={modalAddProjectActive} setActive={setModalAddProjectActive}>
+          <AddProject />
+        </Modal>
         <div>
-          <h2></h2>
-          {projects.map(project => 
+            {projects.map(project => 
             <ProjectItem key={project.id} dispatch={dispatch} project={project}/>
-          )}
+            )}
         </div>
       </div>
   );

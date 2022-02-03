@@ -24,7 +24,7 @@ function ProjectsItem ({dispatch, project}) {
             <form>
               <input placeholder={project.name} />
               <input placeholder={project.description} />
-              <button>Save</button>
+              <button disabled={true}>Save</button>
             </form>
         </Modal>
         <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
