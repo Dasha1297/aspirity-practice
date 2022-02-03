@@ -4,6 +4,7 @@ import Form from '../Form/Form';
 import * as projectActions from '../../redux/projectReducer';
 import { v4 as uuid } from 'uuid';
 import InputField from "../UI/InputField/InputField";
+import Button from '../UI/Button/Button';
 
 
 function AddProject () {
@@ -12,13 +13,16 @@ function AddProject () {
   const [description, setDescription] = useState("")
   const dispatch = useDispatch()
 
-  const addProject = (name, description) => {
+  const addProject = (name, description, event) => {
+    event.preventDefault()
+
     const project = {
       id: uuid(),
       name,
       description,
    }
    dispatch(projectActions.addProjectAction(project))
+   
   }
 
   return (
@@ -35,8 +39,16 @@ function AddProject () {
             placeholder={"Description"}
             type={"text"}
           />
-          <button onClick={() => addProject(name, description)}>Save</button>
-    </Form>
+          <Button
+            type='button'
+            text={"Save"}
+            disabled={
+              name === "" || description === "" 
+            }
+            onClick={addProject}
+          />
+          {/* <button onClick={() => addProject(name, description)}>Save</button> */}
+      </Form>
     
   )
 }
