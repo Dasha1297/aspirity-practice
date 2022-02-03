@@ -1,0 +1,23 @@
+.project {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  /*если на странице харакетристики текста один, то лучше запихивать в высше по иерархии и менять уже в отличающихся элемента */
+  color: #262626;
+  font-size: 14px;
+  line-height: 20px;
+}
+.project__name {
+  width: 200px;
+  margin-right: 40px;
+}
+.project__description {
+  width: 600px;
+  margin-right: 70px;
+}
+.project__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}

@@ -4,7 +4,12 @@ import Login from "./components/Authorization/LogIn/Login";
 import Registration from "./components/Authorization/Registration/Registration";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Authorization/Home/Home";
+
+import Projects from "./components/Projects/Projects";
+import ProjectsSelector from "./components/ProjectsSelector/ProjectsSelector";
+
 function App() {
+
   return (
     <React.Fragment>
       <Routes>
@@ -13,6 +18,7 @@ function App() {
         <Route path='/login' element={<Login />} />
       </Routes>
     </React.Fragment>
+
   );
 }
 
