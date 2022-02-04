@@ -3,8 +3,7 @@ import { registration } from "../../../redux/actions/loginActions";
 import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
-import axios from "axios";
-import { ApiUrl } from "../../../redux/consts";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [login, setLogin] = useState("");
@@ -17,11 +16,16 @@ const Registration = () => {
       setValidatePassword(true);
     }
   };
-
+  const navigate = useNavigate();
   const auth = (event) => {
     event.preventDefault();
-    registration(login, password, name);
-    console.log("Submit");
+    const response = registration(login, password, name);
+    if (response) {
+      alert("Вы успешно зарегистрированы");
+      navigate("/");
+    } else {
+      alert("Что-то пошло не так, попробуйте еще раз");
+    }
   };
 
   return (

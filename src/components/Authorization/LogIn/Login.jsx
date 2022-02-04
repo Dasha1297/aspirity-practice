@@ -2,16 +2,24 @@ import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../../redux/actions/loginActions";
 
 const Login = () => {
-  const [login, setLogin] = useState("");
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const logIn = (event) => {
+    event.preventDefault();
+    dispatch(login(email, password));
+  };
+
   return (
-    <Form name={"Вход"}>
+    <Form name={"Вход"} onSubmit={logIn}>
       <InputField
-        value={login}
-        onChange={(e) => setLogin(e.target.value)}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder={"введите email"}
         type={"email"}
         width={350}

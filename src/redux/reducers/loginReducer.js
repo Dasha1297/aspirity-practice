@@ -15,4 +15,5 @@ const loginReducer = (state = defaultState, action) => {
   }
 };
 export default loginReducer;
+
 export const setAuth = () => ({ type: LOGIN });
