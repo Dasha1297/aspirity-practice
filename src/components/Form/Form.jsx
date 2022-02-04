@@ -1,8 +1,8 @@
 import "./Form.css";
 
-const Form = ({ name, children }) => {
+const Form = ({ name, children, onSubmit }) => {
   return (
-    <form className='authorization'>
+    <form className='authorization' onSubmit={onSubmit}>
       <div className='authorization__name'>{name}</div>
       {children}
     </form>

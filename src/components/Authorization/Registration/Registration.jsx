@@ -3,6 +3,8 @@ import { registration } from "../../../redux/actions/loginActions";
 import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
+import axios from "axios";
+import { ApiUrl } from "../../../redux/consts";
 
 const Registration = () => {
   const [login, setLogin] = useState("");
@@ -16,8 +18,14 @@ const Registration = () => {
     }
   };
 
+  const auth = (event) => {
+    event.preventDefault();
+    registration(login, password, name);
+    console.log("Submit");
+  };
+
   return (
-    <Form name={"Регистрация"}>
+    <Form name={"Регистрация"} onSubmit={auth}>
       <InputField
         value={login}
         onChange={(e) => setLogin(e.target.value)}
@@ -42,12 +50,11 @@ const Registration = () => {
         onBlur={() => passwordHandler()}
       />
       <Button
-        type='button'
+        type='submit'
         text={"Зарегистрироваться"}
         disabled={
           login === "" || name === "" || password === "" || !validatePassword
         }
-        onClick={() => registration(login, password, name)}
       />
     </Form>
   );
