@@ -6,12 +6,11 @@ import { v4 as uuid } from 'uuid';
 import InputField from "../UI/InputField/InputField";
 import Button from '../UI/Button/Button';
 
-
 function AddProject () {
   
+  const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const dispatch = useDispatch()
 
   const addProject = (event) => {
 
@@ -25,7 +24,6 @@ function AddProject () {
    dispatch(projectActions.addProjectAction(project))
    setName('')
    setDescription('')
-   
   }
 
   return (

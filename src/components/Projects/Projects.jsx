@@ -5,6 +5,7 @@ import './Projects.css'
 import AddProject from './AddProject';
 import Modal from '../Modal/Modal';
 import ProjectItem from './ProjectsItem/ProjectsItem';
+import ProjectsSelector from "../ProjectsSelector/ProjectsSelector";
 
 function Projects() {
 
@@ -15,8 +16,11 @@ function Projects() {
 
   return (
       <div className='wrapper'>
+        <div style={{margin: '20px 20px'}}>
+          <ProjectsSelector/>
+        </div>
         <div>
-          <button className='addBtn' onClick={() => setModalAddProjectActive(true)}>+ Add project</button> 
+          <button className='addBtn' onClick={() => setModalAddProjectActive(true)}>+ Add new project</button> 
         </div>
         <Modal active={modalAddProjectActive} setActive={setModalAddProjectActive}>
           <AddProject />
