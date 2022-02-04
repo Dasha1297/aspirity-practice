@@ -12,7 +12,7 @@ function EditProject ({...project}) {
   const [editedProjectDescription, setProjectDescription] = useState(project.description)
   const dispatch = useDispatch()
 
-  const addEditedProject = (event) => {
+  const updateProject = (event) => {
     event.preventDefault()
   
     const editedProject = {
@@ -49,7 +49,7 @@ function EditProject ({...project}) {
       <Button
         type='button'
         text={"Save"}
-        onClick={addEditedProject}
+        onClick={updateProject}
         disabled={true}
       />
       <Button
