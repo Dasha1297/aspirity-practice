@@ -6,9 +6,7 @@ import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({ projectReducer, loginReducer });
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+export const store = createStore(
+  rootReducer
+  /*composeWithDevTools(applyMiddleware(thunk))*/
 );
-
-export default store;
