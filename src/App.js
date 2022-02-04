@@ -5,10 +5,12 @@ import Registration from "./components/Authorization/Registration/Registration";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Authorization/Home/Home";
 import Projects from "./components/Projects/Projects";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <React.Fragment>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
