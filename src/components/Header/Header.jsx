@@ -1,15 +1,16 @@
+import "./Header.css";
+import logo from "../../assets/logo.svg";
+import avatar from "../../assets/avatar.svg";
 const Header = () => {
   return (
     <header>
       <div class='logo'>
-        <a href='/my-projects'>
-          <img src='../assets/logo.svg' alt='Asperiod' />
-        </a>
+        <img src={logo} alt='Asperiod' />
       </div>
       <div class='user'>
         <div class='user-wrapper'>
           <span class='user-picture'>
-            <img src='../assets/avatar.svg' alt='Avatar' class='avatar' />
+            <img src={avatar} alt='Avatar' class='avatar' />
           </span>
           <span class='user-name'>Daniel Radcliff</span>
         </div>
