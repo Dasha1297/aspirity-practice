@@ -6,8 +6,7 @@ import { v4 as uuid } from 'uuid';
 import InputField from "../UI/InputField/InputField";
 import Button from '../UI/Button/Button';
 
-
-function AddProject () {
+function AddProject (setModalAddProjectActive) {
   
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -25,7 +24,6 @@ function AddProject () {
    dispatch(projectActions.addProjectAction(project))
    setName('')
    setDescription('')
-   
   }
 
   return (

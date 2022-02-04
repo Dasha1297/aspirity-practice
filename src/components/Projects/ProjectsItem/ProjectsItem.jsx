@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import * as projectActions from '../../../redux/projectReducer';
 import './ProjectItem.css';
 import Modal from '../../Modal/Modal';
+import Form from '../../Form/Form';
+import InputField from '../../UI/InputField/InputField';
+import Button from '../../UI/Button/Button';
 
 function ProjectsItem ({dispatch, project}) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
@@ -21,11 +24,26 @@ function ProjectsItem ({dispatch, project}) {
         </div>
         
         <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive}>
-            <form>
-              <input placeholder={project.name} />
-              <input placeholder={project.description} />
-              <button disabled={true}>Save</button>
-            </form>
+              <Form name={"Edit project"}>
+                <InputField
+                  // value={value}
+                  // onChange={(e) => console.log(e.target.value)}
+                  placeholder={project.name}
+                  type={"text"}
+                />
+                <InputField
+                  //value={value}
+                  //onChange={(e) => console.log(e.target.value)}
+                  placeholder={project.description}
+                  type={"text"}
+                />
+                <Button
+                  type='button'
+                  text={"Save"}
+                  //onClick={addProject}
+                  disabled={true}
+                />
+            </Form>
         </Modal>
         <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
             <p>Are you sure you want to delete the project?</p>
