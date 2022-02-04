@@ -7,10 +7,12 @@ import Home from "./components/Authorization/Home/Home";
 
 import Projects from "./components/Projects/Projects";
 import ProjectsSelector from "./components/ProjectsSelector/ProjectsSelector";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <React.Fragment>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
