@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Registration />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/projects' element={<Projects />} />
+          <Route path='/my-projects' element={<Projects />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
