@@ -16,11 +16,11 @@ function Projects() {
 
   return (
       <div className='wrapper'>
-        <div>
-          <ProjectsSelector />
+        <div style={{margin: '20px 20px'}}>
+          <ProjectsSelector/>
         </div>
         <div>
-          <button className='addBtn' onClick={() => setModalAddProjectActive(true)}>+ Add project</button> 
+          <button className='addBtn' onClick={() => setModalAddProjectActive(true)}>+ Add new project</button> 
         </div>
         <Modal active={modalAddProjectActive} setActive={setModalAddProjectActive}>
           <AddProject />
