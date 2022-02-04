@@ -14,6 +14,7 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+    <link rel="stylesheet" href="/src/index.css" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -27,6 +28,22 @@
     <title>React App</title>
   </head>
   <body>
+    <header>
+      <div class="logo"><a href="/my-projects"><img src="/src/assets/logo.svg" alt="Asperiod"></a></div>
+        <div class="user">
+          <div class="user-wrapper">
+            <span class="user-picture"><img src="/src/assets/avatar.svg" alt="Avatar" class="avatar"></span>
+            <span class="user-name">Daniel Radcliff</span>
+          </div>
+          <div class="user-detail">
+            <ul>
+              <li>My projects</li>
+              <li>Log out</li>
+            </ul>
+          </div>
+        </div>
+  </header>
+  
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
