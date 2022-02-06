@@ -4,15 +4,18 @@ import InputField from "../../UI/InputField/InputField";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/loginActions";
+import { useNavigate } from "react-router";
 
 const Login = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const logIn = (event) => {
     event.preventDefault();
     dispatch(login(email, password));
+    navigate("/");
   };
 
   return (

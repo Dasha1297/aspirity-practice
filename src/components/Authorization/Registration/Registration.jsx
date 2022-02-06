@@ -19,13 +19,14 @@ const Registration = () => {
   const navigate = useNavigate();
   const auth = (event) => {
     event.preventDefault();
+    /*
     const response = registration(login, password, name);
     if (response) {
       alert("Вы успешно зарегистрированы");
       navigate("/");
     } else {
       alert("Что-то пошло не так, попробуйте еще раз");
-    }
+    }*/
   };
 
   return (
