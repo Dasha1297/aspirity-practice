@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Login from "./components/Authorization/LogIn/Login";
 import Registration from "./components/Authorization/Registration/Registration";
 import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import Home from "./components/Authorization/Home/Home";
-<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "./redux/actions/loginActions";
-=======
->>>>>>> main
+
 import Projects from "./components/Projects/Projects";
 import Header from "./components/Header/Header";
 
@@ -30,7 +27,7 @@ function App() {
         )}
         {isAuth && (
           <Routes>
-            <Route path='/' element={<h1>HELLO</h1>} />
+            <Route path='/' element={<Projects />} />
           </Routes>
         )}
       </BrowserRouter>

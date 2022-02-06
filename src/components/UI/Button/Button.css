@@ -8,9 +8,19 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  background-color: #ffffff;
 }
 .button__blue {
   background-color: #1037aa;
   color: white;
   border: none;
+}
+.button__edit {
+  background: center url("../../../assets/edit.svg");
+  background-repeat: no-repeat;
+}
+.button__delete {
+  background-image: url("../../../assets/delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -12,6 +12,8 @@ const Button = ({
   onClick,
   onSubmit,
   disabled,
+  edit,
+  removal,
 }) => {
   if (type === "button") {
     return link === "#" ? (
@@ -22,6 +24,8 @@ const Button = ({
         className={classNames({
           button: true,
           button__blue: color === "blue",
+          button__edit: edit,
+          button__delete: removal,
         })}
       >
         {text}

@@ -18,8 +18,16 @@ function ProjectsItem({ dispatch, project }) {
       <div className='project__name'>{project.name}</div>
       <div className='project__description'>{project.description}</div>
       <div className='project__actions'>
-        <button onClick={() => setModalEditPrjctActive(true)}>ET</button>
-        <button onClick={() => setModalDelPrjctActive(true)}>RM</button>
+        <Button
+          onClick={() => setModalEditPrjctActive(true)}
+          edit={true}
+          width={40}
+        ></Button>
+        <Button
+          onClick={() => setModalDelPrjctActive(true)}
+          removal={true}
+          width={40}
+        ></Button>
       </div>
 
       <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive}>

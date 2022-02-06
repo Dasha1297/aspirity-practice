@@ -16,3 +16,7 @@
   border-radius: 8px;
   align-self: flex-end;
 }
+.add__button {
+  margin: 15px 0px;
+  align-self: flex-end;
+}

@@ -6,10 +6,11 @@ import AddProject from "./AddProject";
 import Modal from "../Modal/Modal";
 import ProjectItem from "./ProjectsItem/ProjectsItem";
 import ProjectsSelector from "../ProjectsSelector/ProjectsSelector";
+import Button from "../UI/Button/Button";
 
 function Projects() {
   const dispatch = useDispatch();
-  const projects = useSelector((state) => state.projects);
+  const projects = useSelector((state) => state.projectReducer.projects);
 
   const [modalAddProjectActive, setModalAddProjectActive] = useState(false);
 
@@ -18,13 +19,12 @@ function Projects() {
       <div style={{ margin: "20px 20px" }}>
         <ProjectsSelector />
       </div>
-      <div>
-        <button
-          className='addBtn'
+      <div className='add__button'>
+        <Button
           onClick={() => setModalAddProjectActive(true)}
-        >
-          + Add new project
-        </button>
+          text={"Add new project"}
+          width={250}
+        ></Button>
       </div>
       <Modal
         active={modalAddProjectActive}
