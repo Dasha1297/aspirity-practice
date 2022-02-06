@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import * as projectActions from "../../../redux/reducers/projectReducer";
+import * as projectActions from "../../../redux/projectReducer";
 import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
+import Button from "../../UI/Button/Button";
+import EditProject from "../EditProject";
 
 function ProjectsItem({ dispatch, project }) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
@@ -21,15 +23,16 @@ function ProjectsItem({ dispatch, project }) {
       </div>
 
       <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive}>
-        <form>
-          <input placeholder={project.name} />
-          <input placeholder={project.description} />
-          <button disabled={true}>Save</button>
-        </form>
+        <EditProject {...project} />
       </Modal>
       <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
         <p>Are you sure you want to delete the project?</p>
-        <button onClick={() => removeProject(project)}>Yes</button>
+        <Button
+          type='button'
+          text={"Yes"}
+          onClick={() => removeProject(project)}
+          //disabled={true}
+        />
       </Modal>
     </div>
   );

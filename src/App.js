@@ -4,10 +4,13 @@ import Login from "./components/Authorization/LogIn/Login";
 import Registration from "./components/Authorization/Registration/Registration";
 import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import Home from "./components/Authorization/Home/Home";
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/actions/loginActions";
+=======
+>>>>>>> main
 import Projects from "./components/Projects/Projects";
-import ProjectsSelector from "./components/ProjectsSelector/ProjectsSelector";
+import Header from "./components/Header/Header";
 
 function App() {
   const isAuth = useSelector((state) => state.loginReducer.isAuth);
@@ -16,6 +19,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <Header />
       <BrowserRouter>
         {!isAuth && (
           <Routes>
