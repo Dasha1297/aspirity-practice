@@ -25,7 +25,7 @@ function EditProject ({...project}) {
     setProjectDescription('')
   };
 
-  const discard = (event) => {
+  const reset = (event) => {
     event.preventDefault()
 
     setProjectName(project.name)
@@ -54,8 +54,8 @@ function EditProject ({...project}) {
       />
       <Button
         type='button'
-        text={"Discard"}
-        onClick={discard}
+        text={"Reset"}
+        onClick={reset}
         //disabled={true}
       />
     </Form>
