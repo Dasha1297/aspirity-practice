@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <Form name={"Вход"} onSubmit={logIn}>
+    <Form name={"Вход"} onSubmit={logIn} extraClass={"form__authorization "}>
       <InputField
         value={email}
         onChange={(e) => setEmail(e.target.value)}
