@@ -48,13 +48,15 @@ function EditProject ({...project}) {
       />
       <Button
         type='button'
-        text={"Save"}
+        //text={"Save"}
+        text={"Сохранить"}
         onClick={updateProject}
         disabled={true}
       />
       <Button
         type='button'
-        text={"Reset"}
+        //text={"Reset"}
+        text={"К исходному значению"}
         onClick={reset}
         //disabled={true}
       />

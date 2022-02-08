@@ -22,7 +22,8 @@ function Projects() {
       <div className='add__button'>
         <Button
           onClick={() => setModalAddProjectActive(true)}
-          text={"Add new project"}
+          //text={"Add new project"}
+          text={"Добавить новый проект"}
           width={250}
         ></Button>
       </div>

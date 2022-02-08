@@ -34,10 +34,12 @@ function ProjectsItem({ dispatch, project }) {
         <EditProject {...project} />
       </Modal>
       <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
-        <p>Are you sure you want to delete the project?</p>
+        {/* <p>Are you sure you want to delete the project?</p> */}
+        <p>Вы уверены, что хотите удалить проект?</p>
         <Button
           type='button'
-          text={"Yes"}
+          //text={"Yes"}
+          text={"Да"}
           onClick={() => removeProject(project)}
           //disabled={true}
         />
