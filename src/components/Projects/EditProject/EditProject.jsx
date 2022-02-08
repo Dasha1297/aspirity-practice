@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import * as projectActions from '../../redux/projectReducer';
+import * as projectActions from '../../../redux/projectReducer';
 //import { v4 as uuid } from 'uuid';
-import Form from '../Form/Form';
-import InputField from '../UI/InputField/InputField';
-import Button from '../UI/Button/Button';
+import Form from '../../Form/Form';
+import InputField from '../../UI/InputField/InputField';
+import Button from '../../UI/Button/Button';
+import './EditProject.css';
 import { useDispatch } from 'react-redux';
 
 function EditProject ({...project}) {
@@ -46,20 +47,23 @@ function EditProject ({...project}) {
         placeholder={editedProjectDescription}
         type={"text"}
       />
-      <Button
-        type='button'
-        //text={"Save"}
-        text={"Сохранить"}
-        onClick={updateProject}
-        disabled={true}
-      />
-      <Button
-        type='button'
-        //text={"Reset"}
-        text={"К исходному значению"}
-        onClick={reset}
-        //disabled={true}
-      />
+      <div className='update__actions'>
+        <Button
+          type='button'
+          //text={"Save"}
+          text={"Сохранить"}
+          onClick={updateProject}
+          disabled={true}
+        />
+        <Button
+          type='button'
+          //text={"Reset"}
+          text={"К исходному значению"}
+          onClick={reset}
+          //disabled={true}
+        />
+      </div>
+      
     </Form>
   )
 }

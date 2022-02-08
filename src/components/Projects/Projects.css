@@ -6,16 +6,6 @@
   padding-top: 120px;
 }
 
-.addBtn {
-  padding: 0px 16px;
-  width: 272px;
-  height: 40px;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  box-sizing: border-box;
-  border-radius: 8px;
-  align-self: flex-end;
-}
 .add__button {
   margin: 15px 0px;
   align-self: flex-end;

@@ -1,0 +1,4 @@
+.project__actions {
+  display: grid;
+  justify-content: space-between;
+}

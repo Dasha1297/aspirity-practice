@@ -3,7 +3,7 @@ import * as projectActions from "../../../redux/projectReducer";
 import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
-import EditProject from "../EditProject";
+import EditProject from "../EditProject/EditProject";
 import ProjectUsers from "../../ProjectUsers/ProjectUsers";
 
 function ProjectsItem({ dispatch, project }) {
