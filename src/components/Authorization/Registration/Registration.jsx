@@ -5,12 +5,14 @@ import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Registration = () => {
   const [login, setLogin] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [validatePassword, setValidatePassword] = useState(false);
+  const dispatch = useDispatch();
 
   const passwordHandler = (password) => {
     setPassword(password);
@@ -29,7 +31,7 @@ const Registration = () => {
   const navigate = useNavigate();
   const auth = (event) => {
     event.preventDefault();
-    const response = registration(login, password, name);
+    const response = dispatch(registration(login, password, name));
     if (response) {
       alert("Вы успешно зарегистрированы");
       navigate("/");
