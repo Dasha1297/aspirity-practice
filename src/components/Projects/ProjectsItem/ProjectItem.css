@@ -17,6 +17,10 @@
   width: 600px;
   margin-right: 70px;
 }
+.project__users {
+  margin-right: 20px;
+  
+}
 .project__actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
