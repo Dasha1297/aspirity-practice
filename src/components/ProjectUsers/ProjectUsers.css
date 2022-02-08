@@ -2,7 +2,8 @@
   display: block; 
   padding: 5px 5px;
   height: 40px;
-  color: 
+  color: gray;
   background-color: white;
-  border-color: rgb(184, 184, 184);
+  border-color: rgb(224, 223, 223);
+  border-radius: 8px;
   } 
