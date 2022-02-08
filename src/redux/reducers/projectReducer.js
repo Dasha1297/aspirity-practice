@@ -2,13 +2,13 @@ const defaultState = {
   projects: [
     {
       id: 111,
-      name: "My first project",
-      description: "Creating kanbanboard",
+      name: "Мой первый проект",
+      description: "Создание KANBAN доски",
     },
     {
       id: 222,
-      name: "My second project",
-      description: "Creating todo list",
+      name: "Мой второй проект",
+      description: "Страница с отображением прогноза погоды",
     },
   ],
 };
