@@ -4,7 +4,6 @@ import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
 import EditProject from "../EditProject/EditProject";
-import ProjectUsers from "../../ProjectUsers/ProjectUsers";
 
 function ProjectsItem({ dispatch, project }) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
@@ -18,7 +17,10 @@ function ProjectsItem({ dispatch, project }) {
     <div className='project'>
       <div className='project__name'>{project.name}</div>
       <div className='project__description'>{project.description}</div>
-      <div className='project__users'><ProjectUsers /></div>
+          <Button
+           text={"Пользователи проекта"}
+           onClick={() => console.log('All project users')}
+          ></Button>
       <div className='project__actions'>
         <Button
           onClick={() => setModalEditPrjctActive(true)}
