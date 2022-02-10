@@ -1,20 +1,23 @@
-.authorization {
-  background: #f2f2f2;
-  border-radius: 16px;
+.form {
   padding: 20px 30px 40px 20px;
   width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10% auto;
-  box-shadow: 0 0 3px rgb(0 0 0 / 10%);
+
   letter-spacing: 5px;
 }
-.authorization__name {
+.form__name {
   color: #262626;
   font-size: 20px;
   line-height: 26px;
   font-weight: 500;
   margin-bottom: 40px;
   font-family: "Poppins", sans-serif;
+}
+.form__authorization {
+  background: #f2f2f2;
+  border-radius: 16px;
+  margin: 10% auto;
+  box-shadow: 0 0 3px rgb(0 0 0 / 10%);
 }

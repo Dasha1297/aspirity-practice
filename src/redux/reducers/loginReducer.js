@@ -11,8 +11,8 @@ import {
 const user = localStorage.getItem("token");
 
 const defaultState = user
-  ? { isAuth: true, user }
-  : { isAuth: false, user: null };
+  ? { isAuth: true, user, error: false }
+  : { isAuth: false, user: null, error: false };
 
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -20,23 +20,27 @@ const loginReducer = (state = defaultState, action) => {
       return {
         ...state,
         isAuth: false,
+        error: false,
       };
     case REGISTER_FAIL:
       return {
         ...state,
         isAuth: false,
+        error: true,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         isAuth: true,
         user: action.data.user,
+        error: false,
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isAuth: false,
         user: null,
+        error: true,
       };
     case LOGOUT:
       return {

@@ -5,21 +5,27 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/loginActions";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const error = useSelector((state) => state.loginReducer.error);
 
   const logIn = (event) => {
     event.preventDefault();
     dispatch(login(email, password));
-    navigate("/");
+    if (error) {
+      alert("Произошла ошибка. Проверьте логин и пароль");
+    } else {
+      navigate("/");
+    }
   };
 
   return (
-    <Form name={"Вход"} onSubmit={logIn}>
+    <Form name={"Вход"} onSubmit={logIn} extraClass={"form__authorization "}>
       <InputField
         value={email}
         onChange={(e) => setEmail(e.target.value)}
