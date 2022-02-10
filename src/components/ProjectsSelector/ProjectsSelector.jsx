@@ -6,7 +6,7 @@ function ProjectsSelector() {
 
   return (
     <select name='All projects' className='select'>
-      <option>All project</option>
+      <option>Все проекты</option>
       {projects.map((project) => (
         <option key={project.id}>{project.name}</option>
       ))}

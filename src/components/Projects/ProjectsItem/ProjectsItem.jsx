@@ -3,7 +3,7 @@ import * as projectActions from "../../../redux/projectReducer";
 import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
-import EditProject from "../EditProject";
+import EditProject from "../EditProject/EditProject";
 
 function ProjectsItem({ dispatch, project }) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
@@ -17,6 +17,10 @@ function ProjectsItem({ dispatch, project }) {
     <div className='project'>
       <div className='project__name'>{project.name}</div>
       <div className='project__description'>{project.description}</div>
+          <Button
+           text={"Пользователи проекта"}
+           onClick={() => console.log('All project users')}
+          ></Button>
       <div className='project__actions'>
         <Button
           onClick={() => setModalEditPrjctActive(true)}
@@ -34,10 +38,12 @@ function ProjectsItem({ dispatch, project }) {
         <EditProject {...project} />
       </Modal>
       <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
-        <p>Are you sure you want to delete the project?</p>
+        {/* <p>Are you sure you want to delete the project?</p> */}
+        <p>Вы уверены, что хотите удалить проект?</p>
         <Button
           type='button'
-          text={"Yes"}
+          //text={"Yes"}
+          text={"Да"}
           onClick={() => removeProject(project)}
           //disabled={true}
         />
