@@ -25,20 +25,22 @@ function AddProject() {
   };
 
   return (
-    <Form name={"New project"}>
+    <Form name={"Новый проект"}>
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder={"Project name"}
+        //placeholder={"Project name"}
+        placeholder={"Название проекта"}
         type={"text"}
       />
       <InputField
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder={"Description"}
+        //placeholder={"Description"}
+        placeholder={"Описание проекта"}
         type={"text"}
       />
-      <Button type='button' text={"Save"} onClick={addProject} />
+      <Button type='button' text={"Сохранить"} onClick={addProject} />
     </Form>
   );
 }
