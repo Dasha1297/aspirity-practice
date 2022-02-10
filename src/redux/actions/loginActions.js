@@ -17,9 +17,8 @@ export const registration = (email, password, name) => async (dispatch) => {
       name: name,
     });
     dispatch({ type: REGISTER_SUCCESS });
-    return response.data.success;
   } catch (error) {
-    dispatch({ type: REGISTER_FAIL });
+    dispatch({ type: REGISTER_FAIL, error: error });
     throw error.response.data;
   }
 };
@@ -34,6 +33,7 @@ export const login = (email, password) => async (dispatch) => {
     localStorage.setItem("token", response.data.token);
   } catch (error) {
     dispatch({ type: LOGIN_FAIL });
+    alert("Произошла ошибка");
   }
 };
 
