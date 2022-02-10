@@ -17,11 +17,13 @@ function ProjectsItem({ dispatch, project }) {
     <div className='project'>
       <div className='project__name'>{project.name}</div>
       <div className='project__description'>{project.description}</div>
-          <Button
-           text={"Пользователи проекта"}
-           onClick={() => console.log('All project users')}
-          ></Button>
+
       <div className='project__actions'>
+        <Button
+          text={"Пользователи проекта"}
+          width={200}
+          onClick={() => console.log("All project users")}
+        ></Button>
         <Button
           onClick={() => setModalEditPrjctActive(true)}
           edit={true}
