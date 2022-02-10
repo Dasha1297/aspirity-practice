@@ -1,0 +1,32 @@
+.board {
+  width: 210px;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.board__name {
+  color: #262626;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0px;
+  align-self: center;
+  width: 193px;
+  height: 87px;
+}
+.board__users {
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1037aa;
+}
+.board__settings {
+  background-image: url("../../../assets/actions.svg");
+  background-repeat: no-repeat;
+}

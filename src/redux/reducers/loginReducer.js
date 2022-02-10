@@ -1,5 +1,4 @@
 import {
-  LOGIN,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
@@ -11,8 +10,8 @@ import {
 const user = localStorage.getItem("token");
 
 const defaultState = user
-  ? { isAuth: true, user, error: false }
-  : { isAuth: false, user: null, error: false };
+  ? { isAuth: true, user, error: "" }
+  : { isAuth: false, user: null, error: "" };
 
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -20,27 +19,27 @@ const loginReducer = (state = defaultState, action) => {
       return {
         ...state,
         isAuth: false,
-        error: false,
+        error: "",
       };
     case REGISTER_FAIL:
       return {
         ...state,
         isAuth: false,
-        error: true,
+        error: action.error,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         isAuth: true,
         user: action.data.user,
-        error: false,
+        error: "",
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isAuth: false,
         user: null,
-        error: true,
+        error: "error",
       };
     case LOGOUT:
       return {

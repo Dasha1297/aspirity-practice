@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Projects from "./components/Projects/Projects";
 import Header from "./components/Header/Header";
+import Boards from "./components/Boards/Boards";
 
 function App() {
   const isAuth = useSelector((state) => state.loginReducer.isAuth);
-  console.log(isAuth);
+
   const dispatch = useDispatch();
 
   return (
@@ -28,6 +29,7 @@ function App() {
         {isAuth && (
           <Routes>
             <Route path='/' element={<Projects />} />
+            <Route path='/boards' element={<Boards />} />
           </Routes>
         )}
       </BrowserRouter>

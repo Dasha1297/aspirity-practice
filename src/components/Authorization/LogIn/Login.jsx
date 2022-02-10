@@ -12,16 +12,11 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const error = useSelector((state) => state.loginReducer.error);
 
   const logIn = (event) => {
     event.preventDefault();
     dispatch(login(email, password));
-    if (error) {
-      alert("Произошла ошибка. Проверьте логин и пароль");
-    } else {
-      navigate("/");
-    }
+    navigate("/");
   };
 
   return (
@@ -44,7 +39,7 @@ const Login = () => {
       <Button
         type='submit'
         text={"Войти"}
-        disabled={login === "" || password === ""}
+        disabled={email === "" || password === ""}
       />
     </Form>
   );
