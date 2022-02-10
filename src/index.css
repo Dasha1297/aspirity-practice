@@ -28,6 +28,9 @@ header {
   font-weight: bold;
 }
 
+.icon {
+  font-weight: bold;
+}
 .user {
   margin-left: auto;
   position: relative;
