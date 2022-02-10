@@ -40,13 +40,22 @@ function ProjectsItem({ dispatch, project }) {
       <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
         {/* <p>Are you sure you want to delete the project?</p> */}
         <p>Вы уверены, что хотите удалить проект?</p>
-        <Button
-          type='button'
-          //text={"Yes"}
-          text={"Да"}
-          onClick={() => removeProject(project)}
-          //disabled={true}
-        />
+        <div className='project__actions'>
+          <Button
+            type='button'
+            //text={"Yes"}
+            text={"Да"}
+            onClick={() => removeProject(project)}
+            //disabled={true}
+          />
+          <Button
+            type='button'
+            //text={"Cancel"}
+            text={"Нет"}
+            onClick={() => console.log('remove question modal')}
+            //disabled={true}
+          />
+        </div>
       </Modal>
     </div>
   );
