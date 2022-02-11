@@ -2,7 +2,13 @@ import React from "react";
 import "./App.css";
 import Login from "./components/Authorization/LogIn/Login";
 import Registration from "./components/Authorization/Registration/Registration";
-import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Route,
+  Routes,
+  Switch,
+} from "react-router-dom";
 import Home from "./components/Authorization/Home/Home";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -18,7 +24,7 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <BrowserRouter>
+      <HashRouter>
         {!isAuth && (
           <Routes>
             <Route path='/' element={<Home />} />
@@ -32,7 +38,7 @@ function App() {
             <Route path='/boards' element={<Boards />} />
           </Routes>
         )}
-      </BrowserRouter>
+      </HashRouter>
     </React.Fragment>
   );
 }
