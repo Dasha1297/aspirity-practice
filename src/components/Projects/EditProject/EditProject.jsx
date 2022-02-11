@@ -26,11 +26,12 @@ function EditProject ({...project}) {
     setProjectDescription('')
   };
 
-  const reset = (event) => {
+  const cancelUpdate = (event) => {
     event.preventDefault()
-
     setProjectName(project.name)
     setProjectDescription(project.description)
+
+    console.log('remove question modal');
   }
 
   return (
@@ -57,9 +58,9 @@ function EditProject ({...project}) {
         />
         <Button
           type='button'
-          //text={"Reset"}
-          text={"К исходному значению"}
-          onClick={reset}
+          //text={"Cancle"}
+          text={"Отмена"}
+          onClick={cancelUpdate}
           //disabled={true}
         />
       </div>
