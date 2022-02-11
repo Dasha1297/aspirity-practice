@@ -25,3 +25,9 @@
   grid-template-columns: repeat(3, auto);
   gap: 30px;
 }
+
+.question__delete__actions {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}

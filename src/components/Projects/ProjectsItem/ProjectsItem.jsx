@@ -42,7 +42,7 @@ function ProjectsItem({ dispatch, project }) {
       <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
         {/* <p>Are you sure you want to delete the project?</p> */}
         <p>Вы уверены, что хотите удалить проект?</p>
-        <div className='project__actions'>
+        <div className='question__delete__actions'>
           <Button
             type='button'
             //text={"Yes"}
