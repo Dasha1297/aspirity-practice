@@ -17,6 +17,7 @@ export const registration = (email, password, name) => async (dispatch) => {
       name: name,
     });
     dispatch({ type: REGISTER_SUCCESS });
+    return response;
   } catch (error) {
     dispatch({ type: REGISTER_FAIL, error: error });
     throw error.response.data;
