@@ -43,17 +43,21 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   const token = TokenService.getUser().token;
-  await axios({
-    method: "POST",
-    url: ApiUrl + "auth/logout",
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
-  TokenService.removeUser();
-  dispatch({
-    type: LOGOUT,
-  });
+  try {
+    axios({
+      method: "POST",
+      url: ApiUrl + "auth/logout",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    TokenService.removeUser();
+    dispatch({
+      type: LOGOUT,
+    });
+  } catch (error) {
+    return error;
+  }
 };
 
 export const refreshToken = (accessToken) => (dispatch) => {

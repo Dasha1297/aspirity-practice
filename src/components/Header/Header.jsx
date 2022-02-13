@@ -4,8 +4,10 @@ import logOut from "../../assets/logout.svg";
 import avatar from "../../assets/avatar.svg";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/loginActions";
+import { useSelector } from "react-redux";
 const Header = () => {
   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.loginReducer.isAuth);
   return (
     <header>
       <div class='logo'>
@@ -25,9 +27,11 @@ const Header = () => {
           </ul>
         </div>
   </div>*/}
-      <div class='icon' onClick={() => dispatch(logout())}>
-        <img src={logOut} alt='Asperiod' />
-      </div>
+      {isAuth ? (
+        <div class='icon' onClick={() => dispatch(logout())}>
+          <img src={logOut} alt='Asperiod' />
+        </div>
+      ) : null}
     </header>
   );
 };
