@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ApiUrl } from "../consts";
+import { ApiUrl } from "../redux/consts";
 
 const api = axios.create({
   baseURL: ApiUrl,

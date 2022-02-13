@@ -6,7 +6,7 @@ class TokenService {
 
   getLocalAccessToken() {
     const user = JSON.parse(localStorage.getItem("token"));
-    return user?.accessToken;
+    return user?.token;
   }
 
   updateLocalAccessToken(token) {

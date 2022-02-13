@@ -1,6 +1,6 @@
 import axiosInstance from "./api";
 import TokenService from "./TokenService";
-import { REFRESH_TOKEN } from "../consts";
+import { refreshToken } from "../redux/actions/loginActions";
 
 const setup = (store) => {
   axiosInstance.interceptors.request.use(
@@ -24,20 +24,20 @@ const setup = (store) => {
     },
     async (err) => {
       const originalConfig = err.config;
-
-      if (originalConfig.url !== "/auth/signin" && err.response) {
+      debugger;
+      if (originalConfig.url !== "auth/login" && err.response) {
         // Access Token was expired
         if (err.response.status === 401 && !originalConfig._retry) {
           originalConfig._retry = true;
 
           try {
-            const rs = await axiosInstance.post("/auth/refresh", {
+            const rs = await axiosInstance.post("/auth/refreshtoken", {
               refreshToken: TokenService.getLocalRefreshToken(),
             });
 
             const { accessToken } = rs.data;
 
-            dispatch({ type: REFRESH_TOKEN, data: accessToken });
+            dispatch(refreshToken(accessToken));
             TokenService.updateLocalAccessToken(accessToken);
 
             return axiosInstance(originalConfig);

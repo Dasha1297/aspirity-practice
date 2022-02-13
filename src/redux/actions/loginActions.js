@@ -4,10 +4,12 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
+  REFRESH_TOKEN,
   REGISTER_FAIL,
   REGISTER_SUCCESS,
 } from "../consts";
-import api from "../services/api";
+import api from "../../services/api";
+import TokenService from "../../services/TokenService";
 
 export const registration = (email, password, name) => async (dispatch) => {
   try {
@@ -30,19 +32,33 @@ export const login = (email, password) => async (dispatch) => {
       email,
       password,
     });
+
     dispatch({ type: LOGIN_SUCCESS, data: response.data });
-    localStorage.setItem("token", response.data.token);
+    TokenService.setUser(response.data);
   } catch (error) {
     dispatch({ type: LOGIN_FAIL });
-    alert("Произошла ошибка");
+    alert("Произошла ошибка " + error);
   }
 };
 
 export const logout = () => async (dispatch) => {
-  localStorage.removeItem("token");
-  const response = api.post(ApiUrl + "auth/logout");
+  const token = TokenService.getUser().token;
+  await axios({
+    method: "POST",
+    url: ApiUrl + "auth/logout",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+  TokenService.removeUser();
   dispatch({
     type: LOGOUT,
   });
-  return response.data.success;
+};
+
+export const refreshToken = (accessToken) => (dispatch) => {
+  dispatch({
+    type: REFRESH_TOKEN,
+    payload: accessToken,
+  });
 };
