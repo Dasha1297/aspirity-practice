@@ -18,7 +18,7 @@ const Button = ({
   if (type === "button") {
     return link === "#" ? (
       <button
-        disabled={!!disabled}
+        disabled={disabled}
         onClick={onClick}
         style={{ width: width + "px" }}
         className={classNames({

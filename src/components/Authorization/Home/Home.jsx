@@ -8,7 +8,7 @@ const Home = () => {
       <div className='home__buttons'>
         <Button text={"Войти"} link='/login' width={"175"} />
         <Button
-          text={"Зарегестрироваться"}
+          text={"Зарегистрироваться"}
           link='/signup'
           width={"175"}
           color='blue'

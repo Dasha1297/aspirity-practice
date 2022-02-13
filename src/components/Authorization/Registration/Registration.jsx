@@ -91,7 +91,9 @@ const Registration = () => {
       <Button
         type='submit'
         text={"Зарегистрироваться"}
-        disabled={login === "" || !validateEmail || !validatePassword}
+        disabled={
+          name.trim().length === 0 || !validateEmail || !validatePassword
+        }
       />
     </Form>
   );
