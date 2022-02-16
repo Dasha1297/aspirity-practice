@@ -9,11 +9,11 @@ import Button from "../UI/Button/Button";
 function AddProject() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+
   const dispatch = useDispatch();
 
   const addProject = (event) => {
     event.preventDefault();
-
     const project = {
       id: uuid(),
       name,

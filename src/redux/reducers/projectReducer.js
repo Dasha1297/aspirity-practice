@@ -10,7 +10,6 @@ const defaultState = {
 };
 
 
-
 export const projectReducer = (state = defaultState, action) => {
   switch (action.type) {
     case FETCH_PROJECTS_SUCCESS:

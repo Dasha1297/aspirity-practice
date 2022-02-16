@@ -21,6 +21,7 @@ function ProjectsItem({ dispatch, project }) {
       <div className='project__actions'>
         <Button
           text={"Пользователи проекта"}
+          link='/projectusers'
           width={200}
           onClick={() => console.log("All project users")}
         ></Button>
