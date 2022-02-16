@@ -12,5 +12,7 @@ export const ADD_BOARD = "ADD_BOARD";
 export const DELETE_BOARD = "DELETE_BOARD";
 export const EDIT_BOARD = "EDIT_BOARD";
 
-export const ADD_PROJECTS = "ADD_PROJECTS";
-export const REMOVE_PROJECTS = "REMOVE_PROJECTS";
+export const FETCH_PROJECTS_SUCCESS = "FETCH_PROJECTS_SUCCESS";
+export const ADD_PROJECT = "ADD_PROJECT";
+export const UPDATE_PROJECT  = "UPDATE_PROJECT ";
+export const REMOVE_PROJECT = "REMOVE_PROJECT";

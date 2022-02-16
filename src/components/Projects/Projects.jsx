@@ -34,6 +34,7 @@ function Projects() {
         <AddProject />
       </Modal>
       <div>
+                                
         {projects.map((project) => (
           <ProjectItem key={project.id} dispatch={dispatch} project={project} />
         ))}

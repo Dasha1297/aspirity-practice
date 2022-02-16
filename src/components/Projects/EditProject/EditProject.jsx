@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as projectActions from '../../../redux/projectReducer';
+import * as projectActions from '../../../redux/reducers/projectReducer';
 //import { v4 as uuid } from 'uuid';
 import Form from '../../Form/Form';
 import InputField from '../../UI/InputField/InputField';
@@ -21,7 +21,7 @@ function EditProject ({...project}) {
         name: editedProjectName,
         description: editedProjectDescription,
     }
-    dispatch(projectActions.editProjectAction(project.id, editedProject));
+    dispatch(projectActions.updateProjectAction(project.id, editedProject));
     setProjectName('')
     setProjectDescription('')
   };

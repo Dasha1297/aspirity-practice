@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as projectActions from "../../../redux/projectReducer";
+import * as projectActions from "../../../redux/reducers/projectReducer";
 import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
