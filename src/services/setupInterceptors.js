@@ -24,7 +24,6 @@ const setup = (store) => {
     },
     async (err) => {
       const originalConfig = err.config;
-      debugger;
       if (originalConfig.url !== "auth/login" && err.response) {
         // Access Token was expired
         if (err.response.status === 401 && !originalConfig._retry) {

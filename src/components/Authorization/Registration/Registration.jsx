@@ -7,6 +7,8 @@ import InputField from "../../UI/InputField/InputField";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import ErrorMessage from "../../UI/ErrorMessage/ErrorMessage";
+import { SUCCESS } from "../../../redux/consts";
 
 const Registration = () => {
   const [login, setLogin] = useState("");
@@ -14,6 +16,7 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [validatePassword, setValidatePassword] = useState(false);
   const [validateEmail, setValidateEmail] = useState(false);
+  const errors = useSelector((state) => state.loginReducer.error);
 
   const dispatch = useDispatch();
 
@@ -43,14 +46,9 @@ const Registration = () => {
   const auth = (event) => {
     event.preventDefault();
     const response = dispatch(registration(login, password, name));
-    response.then((result) => {
-      if (result.data.success) {
-        alert("Вы успешно зарегистрированы");
-        navigate("/");
-      } else {
-        alert(result.data.error);
-      }
-    });
+    if (response === SUCCESS) {
+      navigate("/");
+    }
   };
 
   return (
@@ -59,18 +57,24 @@ const Registration = () => {
       onSubmit={auth}
       extraClass={"form__authorization "}
     >
-      <InputField
-        value={login}
-        onChange={(e) => emailHandler(e.target.value)}
-        placeholder={"введите email"}
-        type={"email"}
-        width={350}
-      />
+      {name.length >= 128 ? (
+        <ErrorMessage
+          message={"Имя не должно превышать 128 символов"}
+        ></ErrorMessage>
+      ) : null}
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder={"введите имя"}
         type={"text"}
+        width={350}
+      />
+
+      <InputField
+        value={login}
+        onChange={(e) => emailHandler(e.target.value)}
+        placeholder={"введите email"}
+        type={"email"}
         width={350}
       />
       <InputField
@@ -88,6 +92,8 @@ const Registration = () => {
         <br /> - специальные символы;
         <br /> - цифры
       </div>
+      {errors !== null ? <ErrorMessage message={errors}></ErrorMessage> : null}
+
       <Button
         type='submit'
         text={"Зарегистрироваться"}

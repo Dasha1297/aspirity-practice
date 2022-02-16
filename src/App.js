@@ -23,8 +23,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header />
       <HashRouter>
+        <Header />
         {!isAuth && (
           <Routes>
             <Route path='/' element={<Home />} />

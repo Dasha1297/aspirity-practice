@@ -7,11 +7,11 @@ import {
   REGISTER_SUCCESS,
 } from "../consts";
 
-const user = localStorage.getItem("token");
-
-const defaultState = user
-  ? { isAuth: true, user, error: "" }
-  : { isAuth: false, user: null, error: "" };
+const defaultState = {
+  isAuth: false,
+  userId: null,
+  error: null,
+};
 
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -31,14 +31,14 @@ const loginReducer = (state = defaultState, action) => {
       return {
         ...state,
         isAuth: true,
-        user: action.data.user,
+        userId: action.data.userId,
         error: "",
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isAuth: false,
-        user: null,
+        userId: null,
         error: "error",
       };
     case LOGOUT:
@@ -49,7 +49,7 @@ const loginReducer = (state = defaultState, action) => {
     case REFRESH_TOKEN:
       return {
         ...state,
-        user: action.data,
+        userId: action.userId,
       };
     default:
       return state;

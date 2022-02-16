@@ -5,14 +5,18 @@ import avatar from "../../assets/avatar.svg";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/loginActions";
 import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.loginReducer.isAuth);
   return (
     <header>
-      <div class='logo'>
-        <img src={logo} alt='Asperiod' />
-      </div>
+      <NavLink to={"/"}>
+        <div class='logo'>
+          <img src={logo} alt='Asperiod' />
+        </div>
+      </NavLink>
+
       {/*<div class='user'>
         <div class='user-wrapper'>
           <span class='user-picture'>

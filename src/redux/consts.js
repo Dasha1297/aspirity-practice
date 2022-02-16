@@ -8,6 +8,9 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 
+export const SUCCESS = true;
+export const FAIL = false;
+
 export const ADD_BOARD = "ADD_BOARD";
 export const DELETE_BOARD = "DELETE_BOARD";
 export const EDIT_BOARD = "EDIT_BOARD";
