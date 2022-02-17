@@ -16,7 +16,6 @@ class TokenService {
   }
 
   getUser() {
-    //return JSON.parse(localStorage.getItem("token"));
     return localStorage.getItem("token");
   }
 

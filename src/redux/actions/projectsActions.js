@@ -10,9 +10,7 @@ import {
 import TokenService from "../../services/TokenService";
 
 export const fetchProjects = () => {
-  console.log('from fetchPr')
   return async (dispatch) => {
-  console.log('from async')
   try {
     const token = TokenService.getUser();
     const response = await axios({
@@ -45,7 +43,6 @@ export const addProject = ({name, description}) => async (dispatch) => {
         description,
       }
     });
-    console.log(response.data)
     dispatch({ type: ADD_PROJECT, payload: response.data });
   } catch (error) {
     console.log(error)
@@ -57,10 +54,10 @@ export const addProject = ({name, description}) => async (dispatch) => {
 
 export const updateProjects = () => async (dispatch) => {
   try {
-    const token = TokenService.getUser().token;
-    const response = axios({
+    const token = TokenService.getUser();
+    const response = await axios({
       method: "PUT",
-      url: ApiUrl + "projects",
+      url: ApiUrl + "projects/",
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -72,18 +69,19 @@ export const updateProjects = () => async (dispatch) => {
   }
 };
 
-export const removeProjects = () => async (dispatch) => {
+export const removeProject = (id) => async (dispatch) => {
   try {
-    const token = TokenService.getUser().token;
-    const response = axios({
+    const token = TokenService.getUser();
+    const response = await axios({
       method: "DELETE",
-      url: ApiUrl + "projects",
+      url: ApiUrl + "projects/delete/" + id,
       headers: {
         Authorization: "Bearer " + token,
       },
     });
-    dispatch({ type: REMOVE_PROJECT, payload: response.data });
+    dispatch({ type: REMOVE_PROJECT, payload: id });
   } catch (error) {
+    console.log(error)
     //dispatch({ type: REMOVE_PROJECT_ERROR, error: error });
     //throw error.response.data;
   }
