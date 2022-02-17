@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as projectActions from '../../../redux/projectReducer';
+import { updateProjects } from '../../../redux/actions/projectsActions';
 //import { v4 as uuid } from 'uuid';
 import Form from '../../Form/Form';
 import InputField from '../../UI/InputField/InputField';
@@ -14,14 +14,13 @@ function EditProject ({...project}) {
   const dispatch = useDispatch()
 
   const updateProject = (event) => {
-    event.preventDefault()
+    //event.preventDefault()
   
     const editedProject = {
-        id: project.id,
         name: editedProjectName,
         description: editedProjectDescription,
     }
-    dispatch(projectActions.editProjectAction(project.id, editedProject));
+    dispatch(updateProjects(project._id, editedProject));
     setProjectName('')
     setProjectDescription('')
   };
@@ -54,7 +53,7 @@ function EditProject ({...project}) {
           //text={"Save"}
           text={"Сохранить"}
           onClick={updateProject}
-          disabled={true}
+          //disabled={true}
         />
         <Button
           type='button'

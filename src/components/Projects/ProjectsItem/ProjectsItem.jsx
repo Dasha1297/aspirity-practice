@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as projectActions from "../../../redux/projectReducer";
+import { removeProject } from "../../../redux/actions/projectsActions";
 import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
@@ -9,8 +9,8 @@ function ProjectsItem({ dispatch, project }) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
   const [modalDelPrjctActive, setModalDelPrjctActive] = useState(false);
 
-  const removeProject = (project) => {
-    dispatch(projectActions.removeProjectAction(project.id));
+  const deleteProject = (project) => {
+    dispatch(removeProject(project._id));
   };
 
   return (
@@ -21,8 +21,8 @@ function ProjectsItem({ dispatch, project }) {
       <div className='project__actions'>
         <Button
           text={"Пользователи проекта"}
+          link='/projectusers'
           width={200}
-          onClick={() => console.log("All project users")}
         ></Button>
         <Button
           onClick={() => setModalEditPrjctActive(true)}
@@ -47,7 +47,7 @@ function ProjectsItem({ dispatch, project }) {
             type='button'
             //text={"Yes"}
             text={"Да"}
-            onClick={() => removeProject(project)}
+            onClick={() => deleteProject(project)}
             //disabled={true}
           />
           <Button

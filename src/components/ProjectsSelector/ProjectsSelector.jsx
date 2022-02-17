@@ -8,7 +8,7 @@ function ProjectsSelector() {
     <select name='All projects' className='select'>
       <option>Все проекты</option>
       {projects.map((project) => (
-        <option key={project.id}>{project.name}</option>
+        <option key={project._id ?? project.name}>{project.name}</option>
       ))}
     </select>
   );
