@@ -20,7 +20,7 @@ export const fetchProjects = () => async (dispatch) => {
       },
     });
     console.log(response);
-    dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
+    //dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: FETCH_PROJECTS_ERROR, error: error });
     throw error.response.data;
@@ -37,7 +37,6 @@ export const addProjects = () => async (dispatch) => {
         Authorization: "Bearer " + token,
       },
     });
-    console.log(response);
     dispatch({ type: ADD_PROJECT, payload: response.data });
   } catch (error) {
     dispatch({ type: ADD_PROJECT_ERROR, error: error });
@@ -56,7 +55,6 @@ export const updateProjects = () => async (dispatch) => {
         Authorization: "Bearer " + token,
       },
     });
-    console.log(response);
     dispatch({ type: UPDATE_PROJECT, payload: response.data });
   } catch (error) {
     dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
@@ -74,7 +72,6 @@ export const removeProjects = () => async (dispatch) => {
         Authorization: "Bearer " + token,
       },
     });
-    console.log(response);
     dispatch({ type: REMOVE_PROJECT, payload: response.data });
   } catch (error) {
     dispatch({ type: REMOVE_PROJECT_ERROR, error: error });

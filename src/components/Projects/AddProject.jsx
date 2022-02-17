@@ -5,6 +5,7 @@ import * as projectActions from "../../redux/reducers/projectReducer";
 import { v4 as uuid } from "uuid";
 import InputField from "../UI/InputField/InputField";
 import Button from "../UI/Button/Button";
+//import { addProjects } from "../../redux/actions/projectsActions";
 
 function AddProject() {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ function AddProject() {
 
   const dispatch = useDispatch();
 
-  const addProject = (event) => {
+  const addNewProject = (event) => {
     event.preventDefault();
     const project = {
       id: uuid(),
@@ -40,7 +41,7 @@ function AddProject() {
         placeholder={"Описание проекта"}
         type={"text"}
       />
-      <Button type='button' text={"Сохранить"} onClick={addProject} />
+      <Button type='button' text={"Сохранить"} onClick={addNewProject} />
     </Form>
   );
 }

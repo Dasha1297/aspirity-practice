@@ -23,7 +23,6 @@ function ProjectsItem({ dispatch, project }) {
           text={"Пользователи проекта"}
           link='/projectusers'
           width={200}
-          onClick={() => console.log("All project users")}
         ></Button>
         <Button
           onClick={() => setModalEditPrjctActive(true)}
