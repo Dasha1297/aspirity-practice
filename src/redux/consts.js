@@ -1,5 +1,5 @@
 //export const ApiUrl = "http://173.212.214.70:3002/";
-export const ApiUrl = "https://web3.pract.aspirity.io/";
+export const ApiUrl = "https://web2.pract.aspirity.io/";
 export const REFRESH_TOKEN = "REFRESH_TOKEN";
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -17,3 +17,5 @@ export const EDIT_BOARD = "EDIT_BOARD";
 
 export const ADD_PROJECTS = "ADD_PROJECTS";
 export const REMOVE_PROJECTS = "REMOVE_PROJECTS";
+
+export const SET_USER = "SET_USER";

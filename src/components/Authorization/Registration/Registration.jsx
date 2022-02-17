@@ -1,56 +1,21 @@
-import { useState } from "react";
 import "./Registration.css";
-import { registration } from "../../../redux/actions/loginActions";
 import Form from "../../Form/Form";
 import Button from "../../UI/Button/Button";
 import InputField from "../../UI/InputField/InputField";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import ErrorMessage from "../../UI/ErrorMessage/ErrorMessage";
-import { SUCCESS } from "../../../redux/consts";
 
-const Registration = () => {
-  const [login, setLogin] = useState("");
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [validatePassword, setValidatePassword] = useState(false);
-  const [validateEmail, setValidateEmail] = useState(false);
-  const errors = useSelector((state) => state.loginReducer.error);
-
-  const dispatch = useDispatch();
-
-  const passwordHandler = (password) => {
-    setPassword(password);
-
-    if (
-      /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/.test(
-        password
-      )
-    ) {
-      setValidatePassword(true);
-    } else {
-      setValidatePassword(false);
-    }
-  };
-
-  const emailHandler = (email) => {
-    setLogin(email);
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(login)) {
-      setValidateEmail(true);
-    }
-  };
-
-  const navigate = useNavigate();
-
-  const auth = (event) => {
-    event.preventDefault();
-    const response = dispatch(registration(login, password, name));
-    if (response === SUCCESS) {
-      navigate("/");
-    }
-  };
-
+const Registration = ({
+  auth,
+  emailHandler,
+  passwordHandler,
+  login,
+  password,
+  name,
+  setName,
+  validatePassword,
+  validateEmail,
+  errors,
+}) => {
   return (
     <Form
       name={"Регистрация"}
@@ -62,6 +27,7 @@ const Registration = () => {
           message={"Имя не должно превышать 128 символов"}
         ></ErrorMessage>
       ) : null}
+
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -98,7 +64,9 @@ const Registration = () => {
         type='submit'
         text={"Зарегистрироваться"}
         disabled={
-          name.trim().length === 0 || !validateEmail || !validatePassword
+          name.toString().trim().length === 0 ||
+          !validateEmail ||
+          !validatePassword
         }
       />
     </Form>

@@ -27,3 +27,7 @@ h1 {
   line-height: 27px;
   color: #262626;
 }
+
+.create__board {
+  display: grid;
+}

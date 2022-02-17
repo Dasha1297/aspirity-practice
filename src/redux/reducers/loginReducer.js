@@ -6,12 +6,16 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
 } from "../consts";
+import TokenService from "../../services/TokenService";
 
-const defaultState = {
-  isAuth: false,
-  userId: null,
-  error: null,
-};
+const user = TokenService.getUser();
+const defaultState = user
+  ? { isAuth: true, userId: TokenService.getUserId(), error: null }
+  : {
+      isAuth: false,
+      userId: null,
+      error: null,
+    };
 
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
