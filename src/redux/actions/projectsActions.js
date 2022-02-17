@@ -52,7 +52,7 @@ export const addProject = ({name, description}) => async (dispatch) => {
 };
 
 
-export const updateProjects = ({id, name, description}) => async (dispatch) => {
+export const updateProjects = (id, {name, description}) => async (dispatch) => {
   try {
     const token = TokenService.getUser();
     const response = await axios({
@@ -66,7 +66,7 @@ export const updateProjects = ({id, name, description}) => async (dispatch) => {
         description
       }
     });
-    dispatch({ type: UPDATE_PROJECT, payload: response.data, id });
+    dispatch({ type: UPDATE_PROJECT, payload: {id, data: response.data} });
   } catch (error) {
     //dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
     //throw error.response.data;

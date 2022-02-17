@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import "./ProjectUsers.css";
-import Button from "../../UI/Button/Button";
-import { v4 as uuid } from "uuid";
+import Button from "../UI/Button/Button";
+//import { v4 as uuid } from "uuid";
 
 function ProjectUsers() {
-  const dispatch = useDispatch();
-  const projectUsers = useSelector((state) => state.projectUsersReducer.projectsUsers);
+  //const dispatch = useDispatch();
+  //const projectUsers = useSelector((state) => state.projectUsersReducer.projectsUsers);
+  const [projectUsers, setProjectUsers] = useState([
+    {
+      name: "John Doe",
+      email: "akrays@aspirity.com",
+    },
+    {   
+      name: "Ivan Petrov",
+      email: "petrpetr@aspirity.com",   
+    }
+  ]);
 
   return (
     <div className='project_users'>
-      <div>                      
-        {projects.map((project) => (
-          <ProjectUsersItem key={projectUsers._id} dispatch={dispatch} projectUsers={projectUsers} />
+      {/* <div>                      
+        {projectUsers.map((projectUser) => (
+          <div key={projectUsers.email}  className='project_users_item'>{projectUser.email}</div>
         ))}
-      </div>
+      </div> */}
       <Button
         type='button'
         text={"Добавить нового пользователя"}

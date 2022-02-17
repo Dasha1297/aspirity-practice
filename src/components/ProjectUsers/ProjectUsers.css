@@ -1,7 +1,16 @@
-.project_users{
+.project_users {
   display: flex;
-  flex-direction: column;
-  width: 70vw;
-  margin: 0 auto;
-  padding-top: 120px;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  /*если на странице харакетристики текста один, то лучше запихивать в высше по иерархии и менять уже в отличающихся элемента */
+  color: #262626;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: flex-end;
+}
+
+.project_users_item {
+  width: 200px;
+  margin-right: 40px;
 }
