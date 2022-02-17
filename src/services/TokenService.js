@@ -17,11 +17,13 @@ class TokenService {
 
   getUser() {
     return localStorage.getItem("token");
+
   }
 
   getUserId() {
     const user = JSON.parse(localStorage.getItem("token"));
     return user.userId;
+
   }
 
   setUser(token) {

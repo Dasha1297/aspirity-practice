@@ -10,6 +10,8 @@ import Header from "./components/Header/Header";
 import Boards from "./components/Boards/Boards";
 import RegistrationContainer from "./components/Authorization/Registration/RegistrationContainer";
 import TokenService from "./services/TokenService";
+import ProjectUsers from "./components/ProjectUsers/ProjectUsers";
+
 
 function App() {
   const isAuth = useSelector((state) => state.loginReducer.isAuth);
@@ -27,6 +29,7 @@ function App() {
         {isAuth && (
           <Routes>
             <Route path='/' element={<Projects />} />
+            <Route path='/projectusers' element={<ProjectUsers />} />
             <Route path='/boards' element={<Boards />} />
           </Routes>
         )}
