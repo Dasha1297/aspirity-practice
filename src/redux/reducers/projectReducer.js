@@ -13,20 +13,13 @@ const defaultState = {
 export const projectReducer = (state = defaultState, action) => {
   switch (action.type) {
     case FETCH_PROJECTS_SUCCESS:
-      return { ...state, projects: action.payload };
+      return { projects: action.payload };
     case ADD_PROJECT:
-      return {
-         ...state, 
-         projects: [...state.projects, action.payload] };
+      return { projects: [...state.projects, action.payload] };
     case UPDATE_PROJECT:
-      return { ...state, projects: [...state.projects, action.payload] };  
+      return { projects: [...state.projects, action.payload] };  
     case REMOVE_PROJECT:
-      return {
-        ...state,
-        projects: state.projects.filter(
-          (projects) => projects.id !== action.payload
-        ),
-      };
+      return { projects: state.projects.filter((projects) => projects.id !== action.payload) };
     default:
       return state;
   }

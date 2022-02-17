@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Form from "../Form/Form";
 import * as projectActions from "../../redux/reducers/projectReducer";
-import { v4 as uuid } from "uuid";
 import InputField from "../UI/InputField/InputField";
 import Button from "../UI/Button/Button";
-//import { addProjects } from "../../redux/actions/projectsActions";
+import { addProject } from "../../redux/actions/projectsActions";
 
 function AddProject() {
   const [name, setName] = useState("");
@@ -16,11 +15,10 @@ function AddProject() {
   const addNewProject = (event) => {
     event.preventDefault();
     const project = {
-      id: uuid(),
       name,
       description,
     };
-    dispatch(projectActions.addProjectAction(project));
+    dispatch(addProject(project));
     setName("");
     setDescription("");
   };

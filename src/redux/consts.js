@@ -1,5 +1,6 @@
 //export const ApiUrl = "http://173.212.214.70:3002/";
-export const ApiUrl = "https://web3.pract.aspirity.io/";
+export const ApiUrl = "https://web2.pract.aspirity.io/";
+//наш сервер web2 а не web3!
 export const REFRESH_TOKEN = "REFRESH_TOKEN";
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";

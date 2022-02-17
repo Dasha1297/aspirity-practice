@@ -9,38 +9,48 @@ import {
 
 import TokenService from "../../services/TokenService";
 
-export const fetchProjects = () => async (dispatch) => {
+export const fetchProjects = () => {
+  console.log('from fetchPr')
+  return async (dispatch) => {
+  console.log('from async')
   try {
-    const token = TokenService.getUser().token;
-    const response = axios({
+    const token = TokenService.getUser();
+    const response = await axios({
       method: "GET",
       url: ApiUrl + "projects",
       headers: {
-        Authorization: "Bearer " + token,
+      Authorization: "Bearer " + token,
       },
     });
-    console.log(response);
-    //dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
+    dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
   } catch (error) {
-    dispatch({ type: FETCH_PROJECTS_ERROR, error: error });
-    throw error.response.data;
+    console.log(error)
+    //dispatch({ type: FETCH_PROJECTS_ERROR, error: error });
+    //throw error.response.data;
   }
+}
 };
 
-export const addProjects = () => async (dispatch) => {
+export const addProject = ({name, description}) => async (dispatch) => {
   try {
-    const token = TokenService.getUser().token;
-    const response = axios({
+    const token = TokenService.getUser();
+    const response = await axios({
       method: "POST",
       url: ApiUrl + "projects/create",
       headers: {
         Authorization: "Bearer " + token,
       },
+      data: {
+        name,
+        description,
+      }
     });
+    console.log(response.data)
     dispatch({ type: ADD_PROJECT, payload: response.data });
   } catch (error) {
-    dispatch({ type: ADD_PROJECT_ERROR, error: error });
-    throw error.response.data;
+    console.log(error)
+    //dispatch({ type: ADD_PROJECT_ERROR, error: error });
+    //throw error.response.data;
   }
 };
 
@@ -57,8 +67,8 @@ export const updateProjects = () => async (dispatch) => {
     });
     dispatch({ type: UPDATE_PROJECT, payload: response.data });
   } catch (error) {
-    dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
-    throw error.response.data;
+    //dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
+    //throw error.response.data;
   }
 };
 
@@ -74,7 +84,7 @@ export const removeProjects = () => async (dispatch) => {
     });
     dispatch({ type: REMOVE_PROJECT, payload: response.data });
   } catch (error) {
-    dispatch({ type: REMOVE_PROJECT_ERROR, error: error });
-    throw error.response.data;
+    //dispatch({ type: REMOVE_PROJECT_ERROR, error: error });
+    //throw error.response.data;
   }
 };
