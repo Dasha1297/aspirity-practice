@@ -1,14 +1,16 @@
 import axiosInstance from "./api";
 import TokenService from "./TokenService";
 import { refreshToken } from "../redux/actions/loginActions";
+import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const setup = (store) => {
-  axiosInstance.interceptors.request.use(
+  axios.interceptors.request.use(
     (config) => {
       const token = TokenService.getLocalAccessToken();
+      console.log(config);
       if (token) {
-        config.headers["Authorization"] = "Bearer " + token; // for Spring Boot back-end
-        //config.headers["x-access-token"] = token; // for Node.js Express back-end
+        config.headers["Authorization"] = "Bearer " + token;
       }
       return config;
     },
@@ -16,37 +18,30 @@ const setup = (store) => {
       return Promise.reject(error);
     }
   );
-
   const { dispatch } = store;
-  axiosInstance.interceptors.response.use(
+  axios.interceptors.response.use(
     (res) => {
       return res;
     },
+
     async (err) => {
       const originalConfig = err.config;
-      debugger;
       if (originalConfig.url !== "auth/login" && err.response) {
-        // Access Token was expired
         if (err.response.status === 401 && !originalConfig._retry) {
           originalConfig._retry = true;
-
           try {
-            const rs = await axiosInstance.post("/auth/refreshtoken", {
+            const rs = await axiosInstance.post("/auth/refresh", {
               refreshToken: TokenService.getLocalRefreshToken(),
             });
-
             const { accessToken } = rs.data;
-
             dispatch(refreshToken(accessToken));
             TokenService.updateLocalAccessToken(accessToken);
-
             return axiosInstance(originalConfig);
           } catch (_error) {
             return Promise.reject(_error);
           }
         }
       }
-
       return Promise.reject(err);
     }
   );

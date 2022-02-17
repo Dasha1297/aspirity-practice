@@ -5,7 +5,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px 7px;
 }
 .board__name {
   color: #262626;

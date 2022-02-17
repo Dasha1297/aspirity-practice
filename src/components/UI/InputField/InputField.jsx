@@ -10,7 +10,7 @@ const InputField = ({
   width,
   height,
   minLength = 1,
-  maxlength = 250,
+  maxlength = 128,
   onBlur,
 }) => {
   return (
@@ -27,6 +27,5 @@ const InputField = ({
     ></input>
   );
 };
-
 
 export default InputField;

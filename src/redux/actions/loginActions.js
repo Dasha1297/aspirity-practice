@@ -1,12 +1,14 @@
 import axios from "axios";
 import {
   ApiUrl,
+  FAIL,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
   REFRESH_TOKEN,
   REGISTER_FAIL,
   REGISTER_SUCCESS,
+  SUCCESS,
 } from "../consts";
 import api from "../../services/api";
 import TokenService from "../../services/TokenService";
@@ -19,10 +21,10 @@ export const registration = (email, password, name) => async (dispatch) => {
       name: name,
     });
     dispatch({ type: REGISTER_SUCCESS });
-    return response;
+    return SUCCESS;
   } catch (error) {
-    dispatch({ type: REGISTER_FAIL, error: error });
-    throw error.response.data;
+    dispatch({ type: REGISTER_FAIL, error: error.response.data.error });
+    return FAIL;
   }
 };
 
@@ -32,9 +34,8 @@ export const login = (email, password) => async (dispatch) => {
       email,
       password,
     });
-
-    dispatch({ type: LOGIN_SUCCESS, data: response.data });
     TokenService.setUser(response.data);
+    dispatch({ type: LOGIN_SUCCESS, data: response.data });
   } catch (error) {
     dispatch({ type: LOGIN_FAIL });
     alert("Произошла ошибка " + error);

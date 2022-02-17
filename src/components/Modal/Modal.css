@@ -13,13 +13,12 @@
   transition: 0.5s;
 }
 
-.modal.active  {
+.modal.active {
   opacity: 1;
   pointer-events: all;
 }
 
 .modalContent {
-  padding: 20px;
   border-radius: 15px;
   background-color: white;
   transform: scale(0.5);
@@ -28,4 +27,19 @@
 
 .modalContent.active {
   transform: scale(1);
+}
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+}
+.modal__close {
+  background-image: url("../../assets/close.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  margin: 20px;
+  margin-left: auto;
 }
