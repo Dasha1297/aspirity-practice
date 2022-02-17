@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Projects from "./components/Projects/Projects";
 import Header from "./components/Header/Header";
 import Boards from "./components/Boards/Boards";
-import ProjectUsers from "./components/Projects/ProjectUsers/ProjectUsers";
+import ProjectUsers from "./components/ProjectUsers/ProjectUsers";
 
 function App() {
   const isAuth = useSelector((state) => state.loginReducer.isAuth);

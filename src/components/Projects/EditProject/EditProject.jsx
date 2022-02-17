@@ -14,7 +14,7 @@ function EditProject ({...project}) {
   const dispatch = useDispatch()
 
   const updateProject = (event) => {
-    //event.preventDefault()
+    event.preventDefault()
   
     const editedProject = {
         name: editedProjectName,

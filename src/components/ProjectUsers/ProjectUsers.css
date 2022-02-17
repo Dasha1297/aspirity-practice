@@ -1,9 +1,7 @@
-.select__users { 
-  display: block; 
-  padding: 5px 5px;
-  height: 40px;
-  color: gray;
-  background-color: white;
-  border-color: rgb(224, 223, 223);
-  border-radius: 8px;
-  } 
+.project_users{
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 120px;
+}
