@@ -19,6 +19,7 @@ function ProjectUsers() {
 
   return (
     <div className='project_users'>
+      <p>* Здесь будет отображаться список пользователей проекта</p>
       {/* <div>                      
         {projectUsers.map((projectUser) => (
           <div key={projectUsers.email}  className='project_users_item'>{projectUser.email}</div>
