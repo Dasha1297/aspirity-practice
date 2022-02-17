@@ -52,17 +52,21 @@ export const addProject = ({name, description}) => async (dispatch) => {
 };
 
 
-export const updateProjects = () => async (dispatch) => {
+export const updateProjects = ({id, name, description}) => async (dispatch) => {
   try {
     const token = TokenService.getUser();
     const response = await axios({
       method: "PUT",
-      url: ApiUrl + "projects/",
+      url: ApiUrl + "projects/update/" + id,
       headers: {
         Authorization: "Bearer " + token,
       },
+      data: {
+        name,
+        description
+      }
     });
-    dispatch({ type: UPDATE_PROJECT, payload: response.data });
+    dispatch({ type: UPDATE_PROJECT, payload: response.data, id });
   } catch (error) {
     //dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
     //throw error.response.data;
