@@ -1,14 +1,12 @@
 import axiosInstance from "./api";
 import TokenService from "./TokenService";
 import { refreshToken } from "../redux/actions/loginActions";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 
 const setup = (store) => {
   axios.interceptors.request.use(
     (config) => {
       const token = TokenService.getLocalAccessToken();
-      console.log(config);
       if (token) {
         config.headers["Authorization"] = "Bearer " + token;
       }
@@ -33,9 +31,10 @@ const setup = (store) => {
             const rs = await axiosInstance.post("/auth/refresh", {
               refreshToken: TokenService.getLocalRefreshToken(),
             });
-            const { accessToken } = rs.data;
-            dispatch(refreshToken(accessToken));
-            TokenService.updateLocalAccessToken(accessToken);
+            const { token } = rs.data;
+            dispatch(refreshToken(token));
+            TokenService.updateLocalAccessToken(token);
+            console.log(TokenService.getLocalAccessToken());
             return axiosInstance(originalConfig);
           } catch (_error) {
             return Promise.reject(_error);

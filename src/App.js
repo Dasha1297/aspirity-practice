@@ -12,7 +12,6 @@ import RegistrationContainer from "./components/Authorization/Registration/Regis
 import TokenService from "./services/TokenService";
 import ProjectUsers from "./components/ProjectUsers/ProjectUsers";
 
-
 function App() {
   const isAuth = useSelector((state) => state.loginReducer.isAuth);
   return (
