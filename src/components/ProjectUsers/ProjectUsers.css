@@ -1,9 +1,16 @@
-.select__users { 
-  display: block; 
-  padding: 5px 5px;
-  height: 40px;
-  color: gray;
-  background-color: white;
-  border-color: rgb(224, 223, 223);
-  border-radius: 8px;
-  } 
+.project_users {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  /*если на странице харакетристики текста один, то лучше запихивать в высше по иерархии и менять уже в отличающихся элемента */
+  color: #262626;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: flex-end;
+}
+
+.project_users_item {
+  width: 200px;
+  margin-right: 40px;
+}

@@ -5,7 +5,7 @@ import "./Projects.css";
 import AddProject from "./AddProject";
 import Modal from "../Modal/Modal";
 import ProjectItem from "./ProjectsItem/ProjectsItem";
-import ProjectsSelector from "../ProjectsSelector/ProjectsSelector";
+//import ProjectsSelector from "../ProjectsSelector/ProjectsSelector";
 import Button from "../UI/Button/Button";
 import { fetchProjects } from "../../redux/actions/projectsActions";
 
@@ -22,9 +22,9 @@ function Projects() {
 
   return (
     <div className='wrapper'>
-      <div style={{ margin: "20px 20px" }}>
+      {/* <div style={{ margin: "20px 20px" }}>
         <ProjectsSelector />
-      </div>
+      </div> */}
       <div className='add__button'>
         <Button
           onClick={() => setModalAddProjectActive(true)}
