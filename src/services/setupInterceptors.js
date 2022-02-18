@@ -32,10 +32,10 @@ const setup = (store) => {
               refreshToken: TokenService.getLocalRefreshToken(),
             });
             const { token } = rs.data;
-            const { refreshToken } = rs.data;
+            const { refreshToken: rfToken } = rs.data;
             dispatch(refreshToken(token));
-            TokenService.updateLocalAccessToken(token, refreshToken);
-            console.log(TokenService.getLocalAccessToken());
+            TokenService.updateLocalToken(token, rfToken);
+            originalConfig.headers["Authorization"] = "Bearer " + token;
             return axiosInstance(originalConfig);
           } catch (_error) {
             return Promise.reject(_error);

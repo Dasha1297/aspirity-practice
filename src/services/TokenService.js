@@ -11,15 +11,19 @@ class TokenService {
 
   updateLocalToken(token, refreshToken) {
     let user = JSON.parse(localStorage.getItem("token"));
-    console.log(user);
-    user.token = token;
-    user.refreshToken = refreshToken;
-    console.log(user);
-    localStorage.setItem("token", JSON.stringify(user));
+    const id = user.userId;
+    const newUser = {
+      userId: id,
+      token: token,
+      refreshToken: refreshToken,
+    };
+    this.removeUser();
+    this.setUser(newUser);
+    console.log(this.getUser());
   }
 
   getUser() {
-    return localStorage.getItem("token");
+    return JSON.parse(localStorage.getItem("token"));
   }
 
   getUserId() {
