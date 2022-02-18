@@ -11,9 +11,7 @@ const Boards = () => {
   const boards = useSelector((state) => state.boardReducer.boards);
   const Boards = boards.map((board) => <Board name={board.name} users={12} />);
 
-  const addBoard = () => {
-    //ReactDOM.createPortal(AddBoard, document.getElementById("modal"));
-  };
+  const addBoard = () => {};
   return (
     <div className={style.wrapper}>
       <h1>Все доски</h1>

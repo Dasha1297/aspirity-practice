@@ -30,4 +30,5 @@ h1 {
 
 .create__board {
   display: grid;
+  gap: 10px;
 }

@@ -1,4 +1,4 @@
-import { ADD_BOARD, DELETE_BOARD, EDIT_BOARD } from "../consts";
+import { ADD_BOARD, BOARDS, DELETE_BOARD, EDIT_BOARD } from "../consts";
 
 const defaultState = {
   boards: [
@@ -18,6 +18,11 @@ const defaultState = {
 };
 const boardReducer = (state = defaultState, action) => {
   switch (action.type) {
+    case BOARDS:
+      return {
+        ...state,
+        boards: action.payload,
+      };
     case ADD_BOARD:
       return {
         ...state,
@@ -26,12 +31,12 @@ const boardReducer = (state = defaultState, action) => {
     case EDIT_BOARD:
       return {
         ...state,
-        projects: state.boards.map((board) => board.id === board.payload),
+        boards: state.boards.map((board) => board.id === board.payload),
       };
     case DELETE_BOARD:
       return {
         ...state,
-        projects: state.boards.filter((board) => board.id !== board.payload),
+        boards: state.boards.filter((board) => board.id !== board.payload),
       };
       return;
   }
