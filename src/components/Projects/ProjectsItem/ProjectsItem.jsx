@@ -15,7 +15,7 @@ function ProjectsItem({ dispatch, project }) {
 
   return (
     <div className='project'>
-      <div className='project__name' link='/boards'>{project.name}</div>
+      <div className='project__name' link='/boards' id={project._id}>{project.name}</div>
       <div className='project__description'>{project.description}</div>
 
       <div className='project__actions'>

@@ -22,7 +22,7 @@ function Projects() {
 
   return (
     <div className='wrapper'>
-      <h1 style={{ margin: "50px 50px" }}>Все проекты</h1>
+      <h1 style={{ margin: "50px 50px", fontSize: "30px" }}>Все проекты</h1>
       {/* <div style={{ margin: "20px 20px" }}>
         <ProjectsSelector />
       </div> */}
