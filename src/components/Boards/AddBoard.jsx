@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { addBoard } from "../../redux/actions/boardsActions";
 import Button from "../UI/Button/Button";
 import InputField from "../UI/InputField/InputField";
-import Board from "./Board/Board";
 import style from "./Boards.module.css";
 
 const AddBoard = () => {
@@ -10,7 +9,7 @@ const AddBoard = () => {
 
   const dispatch = useDispatch();
 
-  const addBoard = (event) => {
+  const addNewBoard = (event) => {
     event.preventDefault();
 
     dispatch(addBoard({ name, id: 5 }));
@@ -27,7 +26,7 @@ const AddBoard = () => {
         placeholder={"Название доски"}
         type={"text"}
       />
-      <Button type='button' text={"Сохранить"} onClick={addBoard} />
+      <Button type='button' text={"Сохранить"} onClick={addNewBoard} />
     </Form>
     </div>
   );

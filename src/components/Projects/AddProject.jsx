@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Form from "../Form/Form";
-import * as projectActions from "../../redux/reducers/projectReducer";
 import InputField from "../UI/InputField/InputField";
 import Button from "../UI/Button/Button";
 import { addProject } from "../../redux/actions/projectsActions";
