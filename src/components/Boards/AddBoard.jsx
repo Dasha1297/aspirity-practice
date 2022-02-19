@@ -4,7 +4,7 @@ import Button from "../UI/Button/Button";
 import InputField from "../UI/InputField/InputField";
 import style from "./Boards.module.css";
 
-const AddBoard = () => {
+const AddBoard = (projectId) => {
   const [name, setName] = useState("");
 
   const dispatch = useDispatch();
@@ -12,14 +12,14 @@ const AddBoard = () => {
   const addNewBoard = (event) => {
     event.preventDefault();
 
-    dispatch(addBoard({ name, id: 5 }));
+    dispatch(addBoard({ name, projectId }));
     setName("");
     
   };
 
   return (
     <div className={style.create__board}>
-      <Form name={"Новый проект"}>
+      <Form name={"Новая доска"}>
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}

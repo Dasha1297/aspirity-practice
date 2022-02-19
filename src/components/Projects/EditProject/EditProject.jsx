@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { updateProjects } from '../../../redux/actions/projectsActions';
-//import { v4 as uuid } from 'uuid';
 import Form from '../../Form/Form';
 import InputField from '../../UI/InputField/InputField';
 import Button from '../../UI/Button/Button';
@@ -58,7 +57,7 @@ function EditProject ({...project}) {
         <Button
           type='button'
           //text={"Cancle"}
-          text={"Отмена"}
+          text={"Исходное значение"}
           onClick={cancelUpdate}
           //disabled={true}
         />

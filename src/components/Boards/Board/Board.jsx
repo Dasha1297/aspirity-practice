@@ -1,12 +1,16 @@
 import "./Board.css";
+import UpdateBoard from "../UpdateBoard";
+import { deleteBoard } from "../../../redux/actions/boardsActions";
+import Modal from "../../Modal/Modal";
+import Button from "../../UI/Button/Button";
 
-const Board = ({ dispatch, name, id }) => {
+const Board = (dispatch, { _id, name, projectId }) => {
 
   const [modalEditBoardActive, setModalEditBoardActive] = useState(false);
   const [modalDelBoardActive, setModalDelBoardActive] = useState(false);
 
-  const removeBoard = (id) => {
-    dispatch(deleteBoard(id));
+  const removeBoard = (_id) => {
+    dispatch(deleteBoard(_id));
   };
 
   return (
@@ -25,17 +29,15 @@ const Board = ({ dispatch, name, id }) => {
         ></Button>
       </div>
       <Modal active={modalEditBoardActive} setActive={setModalEditBoardActive}>
-        <EditBoard id={id} />
+        <UpdateBoard name={name} projectId={projectId} id={_id} />
       </Modal>
       <Modal active={modalDelBoardActive} setActive={setModalDelBoardActive}>
         <p>Вы уверены, что хотите удалить доску?</p>
         <div>
           <Button
             type='button'
-            //text={"Yes"}
             text={"Да"}
-            onClick={() => removeBoard(id)}
-            //disabled={true}
+            onClick={() => removeBoard(_id)}
           />
         </div>
       </Modal>
