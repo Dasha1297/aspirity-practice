@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Board.css";
 import UpdateBoard from "../UpdateBoard";
 import { deleteBoard } from "../../../redux/actions/boardsActions";
@@ -15,7 +16,7 @@ const Board = (dispatch, { _id, name, projectId }) => {
 
   return (
     <div className='board'>
-      <div className='board__name' id={id}>{name}</div>
+      <div className='board__name' id={_id}>{name}</div>
       <div className='board__settings'>
         <Button
           onClick={() => setModalEditBoardActive(true)}

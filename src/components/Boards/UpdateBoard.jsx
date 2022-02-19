@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { updateBoard } from '../../redux/actions/boardsActions';
-import Form from '../../Form/Form';
-import InputField from '../../UI/InputField/InputField';
-import Button from '../../UI/Button/Button';
+import Form from '../Form/Form';
+import InputField from '../UI/InputField/InputField';
+import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 
 function UpdateBoard ({name, projectId, id}) {
