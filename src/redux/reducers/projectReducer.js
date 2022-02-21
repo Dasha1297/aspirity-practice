@@ -44,12 +44,3 @@ export const removeProjectAction = (payload) => ({
   type: REMOVE_PROJECT,
   payload,
 });
-
-// thunk(action, dispatch) {
-//   if ( typeof action === "function") {
-//     action(dispatch);
-//   } else {
-//     dispatch(action);
-//   }
-// }
-// dispatch(fetchProjects());

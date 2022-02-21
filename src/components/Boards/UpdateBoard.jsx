@@ -6,7 +6,7 @@ import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 import './UpdateBoard.css';
 
-function UpdateBoard ({name, projectId, id}) {
+function UpdateBoard (name, id) {
 
   const [updateBoardName, setUpdateBoardName] = useState(name)
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ function UpdateBoard ({name, projectId, id}) {
   const editBoard = (event) => {
     event.preventDefault()
   
-    dispatch(updateBoard({ name: updateBoardName, projectId, id,}));
+    dispatch(updateBoard(updateBoardName, id));
     setUpdateBoardName('')
   };
 

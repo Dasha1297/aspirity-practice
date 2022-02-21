@@ -3,7 +3,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import loginReducer from "./reducers/loginReducer";
 import { projectReducer } from "./reducers/projectReducer";
-import boardReducer from "./reducers/boardReducer";
+import { boardReducer } from "./reducers/boardReducer";
 import { ThunkMiddleware } from "redux-thunk";
 import TokenService from "../services/TokenService";
 import userReducer from "./reducers/userReducer";
@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
 });
 
 const store = () => {
+
   const store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(thunk))

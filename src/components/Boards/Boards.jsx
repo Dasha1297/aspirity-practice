@@ -12,15 +12,8 @@ import { getBoards } from "../../redux/actions/boardsActions";
 const Boards = () => {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boardReducer.boards);
-  const Boards = boards.map((board) => <Board 
-            id={board._id} 
-            name={board.name}
-            projectId={board.projectId}
-            users={12} 
-            key={board._id} 
-            dispatch={dispatch}
-          />);
-
+  const Boards = boards.map((board) => <Board key={board.id ?? board.name} board={board} users={12} dispatch={dispatch} />);
+  
   const [modalAddBoardActive, setModalAddBoardActive] = useState(false);
 
   useEffect(() => {

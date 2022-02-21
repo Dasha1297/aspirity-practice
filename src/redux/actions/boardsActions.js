@@ -1,9 +1,6 @@
 import { ADD_BOARD, DELETE_BOARD, EDIT_BOARD, ApiUrl, BOARDS } from "../consts";
 import axios from "axios";
 import TokenService from "../../services/TokenService";
-//export const addBoard = (payload) => ({ type: ADD_BOARD, payload });
-//export const editBoard = (payload) => ({ type: EDIT_BOARD, payload });
-//export const deleteBoard = (payload) => ({ type: DELETE_BOARD, payload });
 
 export const getBoards = () => {
   return async (dispatch) => {
@@ -24,8 +21,11 @@ export const getBoards = () => {
   };
 };
 
-export const addBoard =
-  ({ name, projectId }) =>
+export const addBoard = (
+    { 
+      name, 
+      //projectId 
+    }) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
@@ -37,7 +37,7 @@ export const addBoard =
         },
         data: {
           name,
-          projectId,
+          //projectId,
         },
       });
       dispatch({ type: ADD_BOARD, payload: response.data });
@@ -47,7 +47,7 @@ export const addBoard =
   };
 
 export const updateBoard =
-  ({ name, projectId, id }) =>
+  ( name, projectId, id ) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
@@ -59,17 +59,17 @@ export const updateBoard =
         },
         data: {
           name,
-          projectId,
+          //projectId,
         },
       });
-      dispatch({ type: EDIT_BOARD, payload: response.data });
+      dispatch({ type: EDIT_BOARD, payload: { id, data: response.data } });
     } catch (error) {
       throw error.response.data;
     }
   };
 
 export const deleteBoard =
-  ({ id }) =>
+  ({id}) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
