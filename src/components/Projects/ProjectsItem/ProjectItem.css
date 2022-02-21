@@ -27,7 +27,7 @@
 }
 
 .question__delete__actions {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 20px;
+  display: flex;
+  margin: 15px 15px;
+  justify-content: center;
 }
