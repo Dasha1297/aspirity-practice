@@ -4,6 +4,7 @@ import "./ProjectItem.css";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
 import EditProject from "../EditProject/EditProject";
+import { NavLink } from "react-router-dom";
 
 function ProjectsItem({ dispatch, project }) {
   const [modalEditPrjctActive, setModalEditPrjctActive] = useState(false);
@@ -15,9 +16,10 @@ function ProjectsItem({ dispatch, project }) {
 
   return (
     <div className='project'>
-      <div className='project__name' link='/boards' projectId={project._id}>{project.name}</div>
+      <NavLink to={"/boards"}>
+        <div className='project__name' projectId={project._id}>{project.name}</div>
+      </NavLink>
       <div className='project__description'>{project.description}</div>
-
       <div className='project__actions'>
         <Button
           text={"Пользователи проекта"}
@@ -48,13 +50,6 @@ function ProjectsItem({ dispatch, project }) {
             //text={"Yes"}
             text={"Да"}
             onClick={() => deleteProject(project)}
-            //disabled={true}
-          />
-          <Button
-            type='button'
-            //text={"Cancel"}
-            text={"Нет"}
-            onClick={() => console.log('remove question modal')}
             //disabled={true}
           />
         </div>
