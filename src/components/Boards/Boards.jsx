@@ -8,10 +8,14 @@ import Modal from "../Modal/Modal";
 //import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { getBoards } from "../../redux/actions/boardsActions";
+import { useParams } from "react-router-dom";
 
 const Boards = () => {
+
+  const { projectId } = useParams();
+
   const dispatch = useDispatch();
-  const boards = useSelector((state) => state.boardReducer.boards);
+  const boards = useSelector((state) => state.boardReducer.boards.filter((b) => b.projectId === projectId));
   const Boards = boards.map((board) => <Board key={board.id ?? board.name} board={board} users={12} dispatch={dispatch} />);
   
   const [modalAddBoardActive, setModalAddBoardActive] = useState(false);
@@ -34,7 +38,7 @@ const Boards = () => {
         active={modalAddBoardActive}
         setActive={setModalAddBoardActive}
       >
-        <AddBoard />
+        <AddBoard projectId={projectId}/>
       </Modal>
     </div>
   );

@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Projects />} />
             <Route path='/projectusers' element={<ProjectUsers />} />
-            <Route path='/boards' element={<Boards />} />
+            <Route path='/boards/:projectId' element={<Boards />} />
           </Routes>
         )}
       </HashRouter>

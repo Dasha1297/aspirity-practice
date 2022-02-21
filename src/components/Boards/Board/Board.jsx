@@ -5,8 +5,8 @@ import { deleteBoard } from "../../../redux/actions/boardsActions";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
 
-const Board = ({dispatch, board}) => {
-
+const Board = ({ dispatch, board }) => {
+  
   const [modalEditBoardActive, setModalEditBoardActive] = useState(false);
   const [modalDelBoardActive, setModalDelBoardActive] = useState(false);
 

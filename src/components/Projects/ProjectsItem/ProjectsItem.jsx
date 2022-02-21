@@ -16,8 +16,8 @@ function ProjectsItem({ dispatch, project }) {
 
   return (
     <div className='project'>
-      <NavLink to={"/boards"}>
-        <div className='project__name' projectId={project._id}>{project.name}</div>
+      <NavLink to={`/boards/${project._id}`}>
+        <div className='project__name'>{project.name}</div>
       </NavLink>
       <div className='project__description'>{project.description}</div>
       <div className='project__actions'>

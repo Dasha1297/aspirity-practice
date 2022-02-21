@@ -13,7 +13,6 @@ export const fetchProjects = () => {
   return async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
-      console.log(token);
       const response = await axios({
         method: "GET",
         url: ApiUrl + "projects",

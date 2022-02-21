@@ -14,7 +14,7 @@ export const boardReducer = (state = defaultState, action) => {
       return { boards: state.boards.map((board) => action.board.id ? {...board, ...action.payload.data} : board) };
     case DELETE_BOARD:
       return { boards: state.boards.filter((board) => board._id !== action.payload) };
-      default:
+    default:
         return state; 
   }
 };

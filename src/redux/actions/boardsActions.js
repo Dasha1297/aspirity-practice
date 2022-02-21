@@ -6,7 +6,6 @@ export const getBoards = () => {
   return async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
-      console.log(token);
       const response = await axios({
         method: "GET",
         url: ApiUrl + "boards",
@@ -21,11 +20,7 @@ export const getBoards = () => {
   };
 };
 
-export const addBoard = (
-    { 
-      name, 
-      //projectId 
-    }) =>
+export const addBoard = ({ name, projectId }) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
@@ -37,7 +32,7 @@ export const addBoard = (
         },
         data: {
           name,
-          //projectId,
+          projectId,
         },
       });
       dispatch({ type: ADD_BOARD, payload: response.data });
@@ -69,13 +64,13 @@ export const updateBoard =
   };
 
 export const deleteBoard =
-  ({id}) =>
+  (id) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
       const response = await axios({
         method: "DELETE",
-        url: ApiUrl + `boards/delete/${id}`,
+        url: ApiUrl + "boards/delete/" + id,
         headers: {
           Authorization: "Bearer " + token,
         },

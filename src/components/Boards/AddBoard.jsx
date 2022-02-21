@@ -6,7 +6,7 @@ import Button from "../UI/Button/Button";
 import InputField from "../UI/InputField/InputField";
 import style from "./Boards.module.css";
 
-const AddBoard = () => {
+const AddBoard = ({ projectId }) => {
   const [name, setName] = useState("");
 
   const dispatch = useDispatch();
@@ -15,8 +15,10 @@ const AddBoard = () => {
     event.preventDefault();
 
     const board = {
-      name,
+    name: name,
+    projectId,
     }
+
     dispatch(addBoard(board));
     setName("");
     
