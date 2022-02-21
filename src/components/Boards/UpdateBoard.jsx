@@ -6,21 +6,22 @@ import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 import './UpdateBoard.css';
 
-function UpdateBoard (name, id) {
+function UpdateBoard ({ name, id }) {
 
-  const [updateBoardName, setUpdateBoardName] = useState(name)
+  const [updatedBoardName, setUpdatedBoardName] = useState(name);
+  console.log(name);
   const dispatch = useDispatch()
 
   const editBoard = (event) => {
     event.preventDefault()
   
-    dispatch(updateBoard(updateBoardName, id));
-    setUpdateBoardName('')
+    dispatch(updateBoard(updatedBoardName, id));
+    setUpdatedBoardName('')
   };
 
   const cancelUpdate = (event) => {
     event.preventDefault()
-    setUpdateBoardName(name)
+    setUpdatedBoardName(name)
 
     console.log('remove question modal');
   }
@@ -28,9 +29,9 @@ function UpdateBoard (name, id) {
   return (
     <Form name={"Редактировать доску"}>
       <InputField
-        value={updateBoardName}
-        onChange={(e) => setUpdateBoardName(e.target.value)}
-        placeholder={updateBoardName}
+        value={updatedBoardName}
+        onChange={(e) => setUpdatedBoardName(e.target.value)}
+        placeholder={updatedBoardName}
         type={"text"}
       />
       <div className='update_board_actions'>

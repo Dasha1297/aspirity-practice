@@ -42,7 +42,7 @@ export const addBoard = ({ name, projectId }) =>
   };
 
 export const updateBoard =
-  ( name, projectId, id ) =>
+  (name, id) =>
   async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
@@ -54,12 +54,12 @@ export const updateBoard =
         },
         data: {
           name,
-          //projectId,
         },
       });
+      console.log(response);
       dispatch({ type: EDIT_BOARD, payload: { id, data: response.data } });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 

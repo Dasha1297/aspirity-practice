@@ -5,7 +5,6 @@ import style from "./Boards.module.css";
 import plus from "../../assets/plus.svg";
 import AddBoard from "./AddBoard";
 import Modal from "../Modal/Modal";
-//import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { getBoards } from "../../redux/actions/boardsActions";
 import { useParams } from "react-router-dom";

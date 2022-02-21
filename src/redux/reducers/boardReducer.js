@@ -11,7 +11,7 @@ export const boardReducer = (state = defaultState, action) => {
     case ADD_BOARD:
       return { boards: [...state.boards, action.payload] };
     case EDIT_BOARD:
-      return { boards: state.boards.map((board) => action.board.id ? {...board, ...action.payload.data} : board) };
+      return { boards: state.boards.map((board) => board._id === action.payload.id ? {...board, ...action.payload.data} : board) };
     case DELETE_BOARD:
       return { boards: state.boards.filter((board) => board._id !== action.payload) };
     default:

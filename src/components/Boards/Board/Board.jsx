@@ -4,9 +4,10 @@ import UpdateBoard from "../UpdateBoard";
 import { deleteBoard } from "../../../redux/actions/boardsActions";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
+import { NavLink } from "react-router-dom";
 
 const Board = ({ dispatch, board }) => {
-  
+
   const [modalEditBoardActive, setModalEditBoardActive] = useState(false);
   const [modalDelBoardActive, setModalDelBoardActive] = useState(false);
 
@@ -16,7 +17,9 @@ const Board = ({ dispatch, board }) => {
 
   return (
     <div className='board'>
-      <div className='board__name' id={board._id}>{board.name}</div>
+      <NavLink to={`/tasks/${board._id}`}>
+        <div className='board__name'>{board.name}</div>
+      </NavLink>
       <div className='board__settings'>
         <Button
           onClick={() => setModalEditBoardActive(true)}
