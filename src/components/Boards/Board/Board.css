@@ -30,3 +30,9 @@
   background-image: url("../../../assets/actions.svg");
   background-repeat: no-repeat;
 }
+
+.question__delete__board {
+  display: flex;
+  margin: 15px 15px;
+  justify-content: center;
+}

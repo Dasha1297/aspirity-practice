@@ -4,6 +4,7 @@ import Form from '../Form/Form';
 import InputField from '../UI/InputField/InputField';
 import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
+import './UpdateBoard.css';
 
 function UpdateBoard ({name, projectId, id}) {
 
@@ -32,6 +33,7 @@ function UpdateBoard ({name, projectId, id}) {
         placeholder={updateBoardName}
         type={"text"}
       />
+      <div className='update_board_actions'>
         <Button
           type='button'
           //text={"Save"}
@@ -46,6 +48,8 @@ function UpdateBoard ({name, projectId, id}) {
           onClick={cancelUpdate}
           //disabled={true}
         />
+      </div>
+        
     </Form>
   )
 }

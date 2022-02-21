@@ -5,18 +5,18 @@ import { deleteBoard } from "../../../redux/actions/boardsActions";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
 
-const Board = (dispatch, { _id, name, projectId }) => {
+const Board = (dispatch, id, name, projectId) => {
 
   const [modalEditBoardActive, setModalEditBoardActive] = useState(false);
   const [modalDelBoardActive, setModalDelBoardActive] = useState(false);
 
-  const removeBoard = (_id) => {
-    dispatch(deleteBoard(_id));
+  const removeBoard = (id) => {
+    dispatch(deleteBoard(id));
   };
 
   return (
     <div className='board'>
-      <div className='board__name' id={_id}>{name}</div>
+      <div className='board__name' id={id}>{name}</div>
       <div className='board__settings'>
         <Button
           onClick={() => setModalEditBoardActive(true)}
@@ -30,17 +30,17 @@ const Board = (dispatch, { _id, name, projectId }) => {
         ></Button>
       </div>
       <Modal active={modalEditBoardActive} setActive={setModalEditBoardActive}>
-        <UpdateBoard name={name} projectId={projectId} id={_id} />
+        <UpdateBoard name={name} projectId={projectId} id={id} />
       </Modal>
       <Modal active={modalDelBoardActive} setActive={setModalDelBoardActive}>
-        <p>Вы уверены, что хотите удалить доску?</p>
-        <div>
+        <p style={{margin: '15px'}}>Вы уверены, что хотите удалить доску?</p>
+         <div className='question__delete__board'>
           <Button
             type='button'
             text={"Да"}
-            onClick={() => removeBoard(_id)}
+            onClick={() => removeBoard(id)}
           />
-        </div>
+         </div>
       </Modal>
     </div>
   );

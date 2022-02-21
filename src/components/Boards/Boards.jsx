@@ -5,14 +5,21 @@ import style from "./Boards.module.css";
 import plus from "../../assets/plus.svg";
 import AddBoard from "./AddBoard";
 import Modal from "../Modal/Modal";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { getBoards } from "../../redux/actions/boardsActions";
 
 const Boards = () => {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boardReducer.boards);
-  const Boards = boards.map((board) => <Board {...board} users={12} key={board._id} dispatch={dispatch}/>);
+  const Boards = boards.map((board) => <Board 
+            id={board._id} 
+            name={board.name}
+            projectId={board.projectId}
+            users={12} 
+            key={board._id} 
+            dispatch={dispatch}
+          />);
 
   const [modalAddBoardActive, setModalAddBoardActive] = useState(false);
 
