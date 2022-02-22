@@ -22,7 +22,7 @@ export const fetchProjects = () => {
       });
       dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 };
@@ -45,7 +45,7 @@ export const addProject =
       });
       dispatch({ type: ADD_PROJECT, payload: response.data });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 
@@ -67,7 +67,7 @@ export const updateProjects =
       });
       dispatch({ type: UPDATE_PROJECT, payload: { id, data: response.data } });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 
@@ -84,6 +84,6 @@ export const removeProject = (id) => async (dispatch) => {
     dispatch({ type: REMOVE_PROJECT, payload: id });
   } catch (error) {
     console.log(error);
-    throw error.response.data;
+    throw error;
   }
 };

@@ -15,7 +15,7 @@ export const getBoards = () => {
       });
       dispatch({ type: BOARDS, payload: response.data });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 };
@@ -37,7 +37,7 @@ export const addBoard = ({ name, projectId }) =>
       });
       dispatch({ type: ADD_BOARD, payload: response.data });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
 
@@ -56,7 +56,6 @@ export const updateBoard =
           name,
         },
       });
-      console.log(response);
       dispatch({ type: EDIT_BOARD, payload: { id, data: response.data } });
     } catch (error) {
       throw error;
@@ -77,6 +76,6 @@ export const deleteBoard =
       });
       dispatch({ type: DELETE_BOARD, payload: id });
     } catch (error) {
-      throw error.response.data;
+      throw error;
     }
   };
