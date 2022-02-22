@@ -41,7 +41,11 @@ function Projects() {
       >
         <AddProject />
       </Modal>
-      <div>                      
+      <div>
+        <div className='projects__header'>
+          <p>Название проекта</p>
+          <p>Описание проекта</p>
+        </div>                      
         {projects.map((project) => (
           <ProjectItem key={project._id ?? project.name} dispatch={dispatch} project={project} />
         ))}

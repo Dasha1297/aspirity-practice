@@ -6,6 +6,19 @@
   padding-top: 120px;
 }
 
+.projects__header {
+  padding-left: 15px;
+  color: #838282;
+  font-size: 17px;
+  line-height: 26px;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-template-columns: 300px 200px;
+  gap: 20px;
+  justify-items: start;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 .add__button {
   margin: 15px 0px;
   align-self: flex-end;
