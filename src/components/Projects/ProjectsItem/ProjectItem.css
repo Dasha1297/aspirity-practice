@@ -13,6 +13,15 @@
   width: 200px;
   margin-right: 40px;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: blue;
+}
+
 .project__description {
   width: 600px;
   margin-right: 70px;

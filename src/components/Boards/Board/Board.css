@@ -9,10 +9,11 @@
 }
 .board__name {
   color: #262626;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
   padding: 10px 0px;
@@ -20,15 +21,27 @@
   width: 193px;
   height: 87px;
 }
-.board__users {
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: blue;
+}
+
+/* .board__users {
   align-self: flex-start;
   font-size: 14px;
   line-height: 20px;
   color: #1037aa;
-}
+} */
+
 .board__settings {
   background-image: url("../../../assets/actions.svg");
   background-repeat: no-repeat;
+  display: grid;
+  gap: 30px;
 }
 
 .question__delete__board {
