@@ -13,8 +13,8 @@
   line-height: 26px;
   font-family: "Poppins", sans-serif;
   display: grid;
-  grid-template-columns: 200px 200px;
-  gap: 50px;
+  grid-template-columns: 300px 200px;
+  gap: 20px;
   justify-items: start;
   border-bottom: 1px solid #e5e5e5;
 }
