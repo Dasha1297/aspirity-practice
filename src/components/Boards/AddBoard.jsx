@@ -33,7 +33,12 @@ const AddBoard = ({ projectId }) => {
         placeholder={"Название доски"}
         type={"text"}
       />
-      <Button type='button' text={"Сохранить"} onClick={addNewBoard} />
+      <Button
+        type='button' 
+        text={"Сохранить"} 
+        onClick={addNewBoard} 
+        disabled={name === ""}
+        />
     </Form>
     </div>
   );

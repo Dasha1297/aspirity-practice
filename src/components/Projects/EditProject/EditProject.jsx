@@ -52,6 +52,7 @@ function EditProject ({...project}) {
           //text={"Save"}
           text={"Сохранить"}
           onClick={updateProject}
+          disabled={editedProjectName === "" || editedProjectDescription === ""}
           //disabled={true}
         />
         <Button

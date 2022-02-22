@@ -40,14 +40,13 @@ function UpdateBoard ({ name, id }) {
           //text={"Save"}
           text={"Сохранить"}
           onClick={editBoard}
-          //disabled={true}
+          disabled={updatedBoardName === ""}
         />
         <Button
           type='button'
           //text={"Cancle"}
           text={"Исходное значение"}
           onClick={cancelUpdate}
-          //disabled={true}
         />
       </div>
         

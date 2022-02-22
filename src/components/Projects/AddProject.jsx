@@ -38,7 +38,12 @@ function AddProject() {
         placeholder={"Описание проекта"}
         type={"text"}
       />
-      <Button type='button' text={"Сохранить"} onClick={addNewProject} />
+      <Button 
+        type='button' 
+        text={"Сохранить"} 
+        onClick={addNewProject} 
+        disabled={name === "" || description === ""}
+        />
     </Form>
   );
 }
