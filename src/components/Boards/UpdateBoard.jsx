@@ -9,7 +9,6 @@ import './UpdateBoard.css';
 function UpdateBoard ({ name, id }) {
 
   const [updatedBoardName, setUpdatedBoardName] = useState(name);
-  console.log(name);
   const dispatch = useDispatch()
 
   const editBoard = (event) => {
@@ -22,12 +21,10 @@ function UpdateBoard ({ name, id }) {
   const cancelUpdate = (event) => {
     event.preventDefault()
     setUpdatedBoardName(name)
-
-    console.log('remove question modal');
   }
 
   return (
-    <Form name={"Редактировать доску"}>
+    <Form>
       <InputField
         value={updatedBoardName}
         onChange={(e) => setUpdatedBoardName(e.target.value)}

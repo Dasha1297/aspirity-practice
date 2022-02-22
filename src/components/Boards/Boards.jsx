@@ -34,6 +34,7 @@ const Boards = () => {
         {Boards}
       </div>
       <Modal
+        name={"Новая доска"}
         active={modalAddBoardActive}
         setActive={setModalAddBoardActive}
       >

@@ -35,6 +35,7 @@ function Projects() {
         ></Button>
       </div>
       <Modal
+        name={"Новый проект"}
         active={modalAddProjectActive}
         setActive={setModalAddProjectActive}
       >

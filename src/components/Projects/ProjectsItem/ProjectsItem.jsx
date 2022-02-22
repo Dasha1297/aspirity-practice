@@ -38,12 +38,14 @@ function ProjectsItem({ dispatch, project }) {
         ></Button>
       </div>
 
-      <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive}>
+      <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive} name={"Редактировать проект"}>
         <EditProject {...project} />
       </Modal>
-      <Modal active={modalDelPrjctActive} setActive={setModalDelPrjctActive}>
-        {/* <p>Are you sure you want to delete the project?</p> */}
-        <p style={{margin: '15px'}}>Вы уверены, что хотите удалить проект?</p>
+      <Modal 
+        active={modalDelPrjctActive} 
+        setActive={setModalDelPrjctActive}
+        name={"Вы уверены, что хотите удалить проект?"}
+        >
         <div className='question__delete__actions'>
           <Button
             type='button'

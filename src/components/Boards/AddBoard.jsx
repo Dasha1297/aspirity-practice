@@ -26,7 +26,7 @@ const AddBoard = ({ projectId }) => {
 
   return (
     <div className={style.create__board}>
-      <Form name={"Новая доска"}>
+      <Form>
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}

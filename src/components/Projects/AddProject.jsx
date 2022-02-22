@@ -23,7 +23,9 @@ function AddProject() {
   };
 
   return (
-    <Form name={"Новый проект"}>
+    <Form 
+    //name={"Новый проект"}
+    >
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
