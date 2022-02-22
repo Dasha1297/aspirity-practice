@@ -13,7 +13,6 @@ export const fetchProjects = () => {
   return async (dispatch) => {
     try {
       const token = TokenService.getUser().token;
-      console.log(token);
       const response = await axios({
         method: "GET",
         url: ApiUrl + "projects",
@@ -23,9 +22,7 @@ export const fetchProjects = () => {
       });
       dispatch({ type: FETCH_PROJECTS_SUCCESS, payload: response.data });
     } catch (error) {
-      console.log(error);
-      //dispatch({ type: FETCH_PROJECTS_ERROR, error: error });
-      //throw error.response.data;
+      throw error;
     }
   };
 };
@@ -48,9 +45,7 @@ export const addProject =
       });
       dispatch({ type: ADD_PROJECT, payload: response.data });
     } catch (error) {
-      console.log(error);
-      //dispatch({ type: ADD_PROJECT_ERROR, error: error });
-      //throw error.response.data;
+      throw error;
     }
   };
 
@@ -72,8 +67,7 @@ export const updateProjects =
       });
       dispatch({ type: UPDATE_PROJECT, payload: { id, data: response.data } });
     } catch (error) {
-      //dispatch({ type: UPDATE_PROJECT_ERROR, error: error });
-      //throw error.response.data;
+      throw error;
     }
   };
 
@@ -90,7 +84,6 @@ export const removeProject = (id) => async (dispatch) => {
     dispatch({ type: REMOVE_PROJECT, payload: id });
   } catch (error) {
     console.log(error);
-    //dispatch({ type: REMOVE_PROJECT_ERROR, error: error });
-    //throw error.response.data;
+    throw error;
   }
 };

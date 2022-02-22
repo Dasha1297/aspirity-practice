@@ -5,15 +5,18 @@ import style from "./Boards.module.css";
 import plus from "../../assets/plus.svg";
 import AddBoard from "./AddBoard";
 import Modal from "../Modal/Modal";
-import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { getBoards } from "../../redux/actions/boardsActions";
+import { useParams } from "react-router-dom";
 
 const Boards = () => {
-  const dispatch = useDispatch();
-  const boards = useSelector((state) => state.boardReducer.boards);
-  const Boards = boards.map((board) => <Board {...board} users={12} key={board._id} dispatch={dispatch}/>);
 
+  const { projectId } = useParams();
+
+  const dispatch = useDispatch();
+  const boards = useSelector((state) => state.boardReducer.boards.filter((b) => b.projectId === projectId));
+  const Boards = boards.map((board) => <Board key={board.id ?? board.name} board={board} users={12} dispatch={dispatch} />);
+  
   const [modalAddBoardActive, setModalAddBoardActive] = useState(false);
 
   useEffect(() => {
@@ -31,10 +34,11 @@ const Boards = () => {
         {Boards}
       </div>
       <Modal
+        name={"Новая доска"}
         active={modalAddBoardActive}
         setActive={setModalAddBoardActive}
       >
-        <AddBoard />
+        <AddBoard projectId={projectId}/>
       </Modal>
     </div>
   );

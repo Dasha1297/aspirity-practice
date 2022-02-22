@@ -4,48 +4,49 @@ import Form from '../Form/Form';
 import InputField from '../UI/InputField/InputField';
 import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
+import './UpdateBoard.css';
 
-function UpdateBoard ({name, projectId, id}) {
+function UpdateBoard ({ name, id }) {
 
-  const [updateBoardName, setUpdateBoardName] = useState(name)
+  const [updatedBoardName, setUpdatedBoardName] = useState(name);
   const dispatch = useDispatch()
 
   const editBoard = (event) => {
     event.preventDefault()
   
-    dispatch(updateBoard({ name: updateBoardName, projectId, id,}));
-    setUpdateBoardName('')
+    dispatch(updateBoard(updatedBoardName, id));
+    setUpdatedBoardName('')
   };
 
   const cancelUpdate = (event) => {
     event.preventDefault()
-    setUpdateBoardName(name)
-
-    console.log('remove question modal');
+    setUpdatedBoardName(name)
   }
 
   return (
-    <Form name={"Редактировать доску"}>
+    <Form>
       <InputField
-        value={updateBoardName}
-        onChange={(e) => setUpdateBoardName(e.target.value)}
-        placeholder={updateBoardName}
+        value={updatedBoardName}
+        onChange={(e) => setUpdatedBoardName(e.target.value)}
+        placeholder={updatedBoardName}
         type={"text"}
       />
+      <div className='update_board_actions'>
         <Button
           type='button'
           //text={"Save"}
           text={"Сохранить"}
           onClick={editBoard}
-          //disabled={true}
+          disabled={updatedBoardName === ""}
         />
         <Button
           type='button'
           //text={"Cancle"}
           text={"Исходное значение"}
           onClick={cancelUpdate}
-          //disabled={true}
         />
+      </div>
+        
     </Form>
   )
 }

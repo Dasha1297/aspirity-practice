@@ -33,7 +33,7 @@ function EditProject ({...project}) {
   }
 
   return (
-    <Form name={"Редактировать проект"}>
+    <Form>
       <InputField
         value={editedProjectName}
         onChange={(e) => setProjectName(e.target.value)}
@@ -52,6 +52,7 @@ function EditProject ({...project}) {
           //text={"Save"}
           text={"Сохранить"}
           onClick={updateProject}
+          disabled={editedProjectName === "" || editedProjectDescription === ""}
           //disabled={true}
         />
         <Button

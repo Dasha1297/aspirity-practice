@@ -4,19 +4,22 @@ import UpdateBoard from "../UpdateBoard";
 import { deleteBoard } from "../../../redux/actions/boardsActions";
 import Modal from "../../Modal/Modal";
 import Button from "../../UI/Button/Button";
+import { NavLink } from "react-router-dom";
 
-const Board = (dispatch, { _id, name, projectId }) => {
+const Board = ({ dispatch, board }) => {
 
   const [modalEditBoardActive, setModalEditBoardActive] = useState(false);
   const [modalDelBoardActive, setModalDelBoardActive] = useState(false);
 
-  const removeBoard = (_id) => {
-    dispatch(deleteBoard(_id));
+  const removeBoard = (board) => {
+    dispatch(deleteBoard(board._id));
   };
 
   return (
     <div className='board'>
-      <div className='board__name' id={_id}>{name}</div>
+      <NavLink to={`/tasks/${board._id}`}>
+        <div className='board__name'>{board.name}</div>
+      </NavLink>
       <div className='board__settings'>
         <Button
           onClick={() => setModalEditBoardActive(true)}
@@ -29,18 +32,28 @@ const Board = (dispatch, { _id, name, projectId }) => {
           width={40}
         ></Button>
       </div>
-      <Modal active={modalEditBoardActive} setActive={setModalEditBoardActive}>
-        <UpdateBoard name={name} projectId={projectId} id={_id} />
+      <Modal 
+        active={modalEditBoardActive} 
+        setActive={setModalEditBoardActive}
+        name={"Редактировать доску"}
+        >
+        <UpdateBoard 
+          name={board.name} 
+          //projectId={board.projectId} 
+          id={board._id} />
       </Modal>
-      <Modal active={modalDelBoardActive} setActive={setModalDelBoardActive}>
-        <p>Вы уверены, что хотите удалить доску?</p>
-        <div>
+      <Modal 
+        active={modalDelBoardActive} 
+        setActive={setModalDelBoardActive}
+        name={"Вы уверены, что хотите удалить доску?"}
+        >
+         <div className='question__delete__board'>
           <Button
             type='button'
             text={"Да"}
-            onClick={() => removeBoard(_id)}
+            onClick={() => removeBoard(board)}
           />
-        </div>
+         </div>
       </Modal>
     </div>
   );

@@ -23,7 +23,9 @@ function AddProject() {
   };
 
   return (
-    <Form name={"Новый проект"}>
+    <Form 
+    //name={"Новый проект"}
+    >
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -38,7 +40,12 @@ function AddProject() {
         placeholder={"Описание проекта"}
         type={"text"}
       />
-      <Button type='button' text={"Сохранить"} onClick={addNewProject} />
+      <Button 
+        type='button' 
+        text={"Сохранить"} 
+        onClick={addNewProject} 
+        disabled={name === "" || description === ""}
+        />
     </Form>
   );
 }

@@ -12,7 +12,7 @@ const Modal = ({ active, setActive, children, name }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className='modal__header'>
-          {name ? <div>{name}</div> : null}
+          {name ? <div className='modal__name'>{name}</div> : null}
           <div onClick={() => setActive(false)} className='modal__close'></div>
         </div>
         {children}

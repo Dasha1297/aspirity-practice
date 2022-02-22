@@ -9,24 +9,46 @@
 }
 .board__name {
   color: #262626;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   display: flex;
   align-items: center;
-  border-top: 1px solid #e5e5e5;
+  justify-content: center;
+  /* border-top: 1px solid #e5e5e5; */
   border-bottom: 1px solid #e5e5e5;
   padding: 10px 0px;
   align-self: center;
   width: 193px;
   height: 87px;
 }
-.board__users {
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: blue;
+}
+
+/* .board__users {
   align-self: flex-start;
   font-size: 14px;
   line-height: 20px;
   color: #1037aa;
-}
+} */
+
 .board__settings {
+  margin: 0px 30px;
+  margin-top: 15px;
   background-image: url("../../../assets/actions.svg");
   background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+}
+
+.question__delete__board {
+  display: flex;
+  margin: 15px 15px;
+  justify-content: center;
 }

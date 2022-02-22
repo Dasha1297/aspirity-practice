@@ -34,6 +34,17 @@
   border-bottom: 1px solid #e5e5e5;
   width: 100%;
 }
+
+.modal__name {
+  margin: 25px;
+  margin-left: 30px;
+  color: #262626;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
 .modal__close {
   background-image: url("../../assets/close.svg");
   background-repeat: no-repeat;
