@@ -40,7 +40,7 @@ a:focus, a:hover {
 .board__settings {
   margin: 0px 30px;
   margin-top: 15px;
-  background-image: url("../../../assets/actions.svg");
+  
   background-repeat: no-repeat;
   display: grid;
   grid-template-columns: 1fr 1fr;
