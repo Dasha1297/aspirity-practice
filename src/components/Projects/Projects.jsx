@@ -43,8 +43,8 @@ function Projects() {
       </Modal>
       <div>
         <div className='projects__header'>
-          <p>Название проекта</p>
-          <p>Описание проекта</p>
+          <p>Название</p>
+          <p>Описание</p>
         </div>                      
         {projects.map((project) => (
           <ProjectItem key={project._id ?? project.name} dispatch={dispatch} project={project} />
