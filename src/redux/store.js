@@ -7,14 +7,15 @@ import { boardReducer } from "./reducers/boardReducer";
 import { ThunkMiddleware } from "redux-thunk";
 import TokenService from "../services/TokenService";
 import userReducer from "./reducers/userReducer";
-import { useDispatch } from "react-redux";
 import { usersById } from "./actions/usersActions";
+import tasksReducer from "./reducers/tasksReducer";
 
 const rootReducer = combineReducers({
   projectReducer,
   loginReducer,
   boardReducer,
   userReducer,
+  tasksReducer,
 });
 
 const store = () => {
