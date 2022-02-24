@@ -6,7 +6,7 @@ import Button from '../../UI/Button/Button';
 import './EditProject.css';
 import { useDispatch } from 'react-redux';
 
-function EditProject ({...project}) {
+function EditProject ({ setModalEditPrjctActive, ...project }) {
 
   const [editedProjectName, setProjectName] = useState(project.name)
   const [editedProjectDescription, setProjectDescription] = useState(project.description)
@@ -20,16 +20,15 @@ function EditProject ({...project}) {
         description: editedProjectDescription,
     }
     dispatch(updateProjects(project._id, editedProject));
-    setProjectName('')
-    setProjectDescription('')
+    setProjectName('');
+    setProjectDescription('');
+    setModalEditPrjctActive(false);
   };
 
   const cancelUpdate = (event) => {
     event.preventDefault()
     setProjectName(project.name)
     setProjectDescription(project.description)
-
-    console.log('remove question modal');
   }
 
   return (
