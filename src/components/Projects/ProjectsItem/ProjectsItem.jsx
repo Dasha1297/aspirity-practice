@@ -38,9 +38,11 @@ function ProjectsItem({ dispatch, project }) {
         ></Button>
       </div>
 
+      {modalEditPrjctActive ? (
       <Modal active={modalEditPrjctActive} setActive={setModalEditPrjctActive} name={"Редактировать проект"}>
-        <EditProject {...project} />
+        <EditProject setModalEditPrjctActive={setModalEditPrjctActive} {...project}/>
       </Modal>
+      ) : null }
       <Modal 
         active={modalDelPrjctActive} 
         setActive={setModalDelPrjctActive}

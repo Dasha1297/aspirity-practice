@@ -32,6 +32,7 @@ const Board = ({ dispatch, board }) => {
           width={40}
         ></Button>
       </div>
+      {modalEditBoardActive ? (
       <Modal 
         active={modalEditBoardActive} 
         setActive={setModalEditBoardActive}
@@ -39,9 +40,11 @@ const Board = ({ dispatch, board }) => {
         >
         <UpdateBoard 
           name={board.name} 
-          //projectId={board.projectId} 
-          id={board._id} />
+          id={board._id}
+          setModalEditBoardActive={setModalEditBoardActive}
+          />
       </Modal>
+      ) : null }
       <Modal 
         active={modalDelBoardActive} 
         setActive={setModalDelBoardActive}
