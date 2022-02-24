@@ -6,7 +6,7 @@ import Button from '../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 import './UpdateBoard.css';
 
-function UpdateBoard ({ name, id }) {
+function UpdateBoard ({ name, id, setModalEditBoardActive }) {
 
   const [updatedBoardName, setUpdatedBoardName] = useState(name);
   const dispatch = useDispatch()
@@ -16,6 +16,7 @@ function UpdateBoard ({ name, id }) {
   
     dispatch(updateBoard(updatedBoardName, id));
     setUpdatedBoardName('')
+    setModalEditBoardActive(false);
   };
 
   const cancelUpdate = (event) => {
