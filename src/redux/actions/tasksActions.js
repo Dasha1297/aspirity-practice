@@ -33,9 +33,7 @@ export const getAllTasks = (boardID) => async (dispatch) => {
         Authorization: "Bearer " + TokenService.getLocalAccessToken(),
       },
     });
-    console.log(boardID);
     const tasks = response.data.filter((i) => i.boardId === boardID);
-    console.log(tasks);
     dispatch(filterByStatus(tasks));
     return SUCCESS;
   } catch (error) {
@@ -74,7 +72,7 @@ export const filterByStatus = (tasks) => async (dispatch) => {
 export const addTask = (task) => async (dispatch) => {
   const token = TokenService.getUser().token;
   try {
-    axios({
+    const response = await axios({
       method: "POST",
       url: ApiUrl + "tasks/create",
       headers: {
@@ -82,7 +80,7 @@ export const addTask = (task) => async (dispatch) => {
       },
       data: task,
     });
-    dispatch({ type: ADD_TASK, payload: task });
+    dispatch({ type: ADD_TASK, payload: response.data });
   } catch (error) {
     return error;
   }
