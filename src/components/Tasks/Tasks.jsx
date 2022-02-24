@@ -20,13 +20,15 @@ import {
   STATUS_TO_DO,
 } from "../../redux/consts";
 import TaskCard from "./TaskCard/TaskCard";
+import { useParams } from "react-router";
 
 const Tasks = () => {
   const state = useSelector((state) => state.tasksReducer);
   const dispatch = useDispatch();
+  const boardID = useParams().boardsId;
 
   useEffect(() => {
-    dispatch(getAllTasks());
+    dispatch(getAllTasks(boardID));
   }, []);
 
   const handleDragEnd = async ({ destination, source }) => {
@@ -72,10 +74,10 @@ const Tasks = () => {
       );
     }
   };
-  console.log(state);
+
   return (
     <div className={style.tasks}>
-      <AddTask />
+      <AddTask boardID={boardID} />
       <div className={style.tasks__table}>
         <DragDropContext onDragEnd={handleDragEnd}>
           {_.map(state, (data, key) => {

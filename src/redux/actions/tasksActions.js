@@ -24,7 +24,7 @@ export const removeStatus = (payload) => ({
 
 export const setNewStatus = (payload) => ({ type: SET_TASK_STATUS, payload });
 
-export const getAllTasks = () => async (dispatch) => {
+export const getAllTasks = (boardID) => async (dispatch) => {
   try {
     const response = await axios({
       method: "get",
@@ -33,7 +33,10 @@ export const getAllTasks = () => async (dispatch) => {
         Authorization: "Bearer " + TokenService.getLocalAccessToken(),
       },
     });
-    dispatch(filterByStatus(response.data));
+    console.log(boardID);
+    const tasks = response.data.filter((i) => i.boardId === boardID);
+    console.log(tasks);
+    dispatch(filterByStatus(tasks));
     return SUCCESS;
   } catch (error) {
     return FAIL;

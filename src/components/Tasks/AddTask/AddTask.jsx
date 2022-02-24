@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router";
 import { addTask } from "../../../redux/actions/tasksActions";
 import { STATUS_TO_DO } from "../../../redux/consts";
 import TokenService from "../../../services/TokenService";
@@ -11,6 +12,7 @@ const AddTask = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
+  const board = useParams().boardsId;
 
   const addNewTask = (event) => {
     event.preventDefault();
@@ -19,7 +21,7 @@ const AddTask = () => {
       description: description,
       assignedTo: TokenService.getUserId(),
       statusId: STATUS_TO_DO,
-      boardId: "62131ce8b13a7f96e37ed4ad",
+      boardId: board,
       elapsedTime: 0,
     };
     dispatch(addTask(newTask));
