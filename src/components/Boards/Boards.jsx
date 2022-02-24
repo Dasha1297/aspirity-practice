@@ -33,13 +33,15 @@ const Boards = () => {
         </button>
         {Boards}
       </div>
+      {modalAddBoardActive ? (
       <Modal
         name={"Новая доска"}
         active={modalAddBoardActive}
         setActive={setModalAddBoardActive}
       >
-        <AddBoard projectId={projectId}/>
+        <AddBoard projectId={projectId} setModalAddBoardActive={setModalAddBoardActive}/>
       </Modal>
+      ) : null }
     </div>
   );
 };
