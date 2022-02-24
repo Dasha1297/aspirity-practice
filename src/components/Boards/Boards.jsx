@@ -15,7 +15,7 @@ const Boards = () => {
 
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boardReducer.boards.filter((b) => b.projectId === projectId));
-  const Boards = boards.map((board) => <Board key={board.id ?? board.name} board={board} users={12} dispatch={dispatch} />);
+  const AllBoards = boards.map((board) => <Board key={board.id ?? board.name} board={board} dispatch={dispatch} />);
   
   const [modalAddBoardActive, setModalAddBoardActive] = useState(false);
 
@@ -31,7 +31,7 @@ const Boards = () => {
           <img src={plus} alt='plus' />
           Создать новую доску
         </button>
-        {Boards}
+        {AllBoards}
       </div>
       {modalAddBoardActive ? (
       <Modal
