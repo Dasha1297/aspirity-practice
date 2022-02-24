@@ -5,7 +5,7 @@ import InputField from "../UI/InputField/InputField";
 import Button from "../UI/Button/Button";
 import { addProject } from "../../redux/actions/projectsActions";
 
-function AddProject() {
+function AddProject({ setModalAddProjectActive }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -20,6 +20,7 @@ function AddProject() {
     dispatch(addProject(project));
     setName("");
     setDescription("");
+    setModalAddProjectActive(false);
   };
 
   return (

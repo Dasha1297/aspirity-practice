@@ -34,13 +34,16 @@ function Projects() {
           width={250}
         ></Button>
       </div>
+
+      {modalAddProjectActive ? (
       <Modal
         name={"Новый проект"}
         active={modalAddProjectActive}
         setActive={setModalAddProjectActive}
       >
-        <AddProject />
+        <AddProject setModalAddProjectActive={setModalAddProjectActive}/>
       </Modal>
+      ) : null }
       <div>
         <div className='projects__header'>
           <p>Название</p>
