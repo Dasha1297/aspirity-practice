@@ -19,7 +19,7 @@ const EditTask = ({ task, setModalEditBoardActive }) => {
   };
 
   return (
-    <Form name={"Добавить задачу"} onSubmit={editTask}>
+    <Form onSubmit={editTask}>
       <InputField
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -34,7 +34,7 @@ const EditTask = ({ task, setModalEditBoardActive }) => {
         type={"text"}
         width={200}
       />
-      <Button color='blue' width={200} text={"Создать"} />
+      <Button color='blue' width={200} text={"Сохранить"} />
     </Form>
   );
 };
