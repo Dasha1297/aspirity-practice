@@ -50,3 +50,14 @@ header {
 .user:hover .user-detail {
   display: block;
 }
+.user__name {
+  font-size: 18px;
+  line-height: 15px;
+  color: #262626;
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+.user__details {
+  display: flex;
+}
