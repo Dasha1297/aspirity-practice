@@ -51,13 +51,13 @@ const Registration = ({
         minLength={8}
         width={350}
       />
-      <div className='password__requirements'>
+      <ul className='password__requirements'>
         Пароль должен содержать:
-        <br />- минимум 8 символов;
-        <br /> - заглавные и строчные буквы;
-        <br /> - специальные символы;
-        <br /> - цифры
-      </div>
+        <li>минимум 8 символов;</li>
+        <li>заглавные и строчные буквы;</li>
+        <li>специальные символы{"(!@#$%^&*.,-_=+?<>~)"};</li>
+        <li>цифры</li>
+      </ul>
       {errors !== null ? <ErrorMessage message={errors}></ErrorMessage> : null}
 
       <Button

@@ -9,6 +9,26 @@
   gap: 16px;
   width: fit-content;
 }
+@media screen and (max-width: 1500px) {
+  .boards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .boards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .boards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 670px) {
+  .boards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .add__button {
   border: 2px dashed #e5e5e5;
   box-sizing: border-box;

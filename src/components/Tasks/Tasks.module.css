@@ -9,7 +9,7 @@
 .tasks__table {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 20px;
 }
 .column {
   width: 200px;
@@ -28,4 +28,15 @@
 ::-webkit-scrollbar {
   border-radius: 1px;
   width: 4px;
+  height: 4px;
+  background-color: #f2f2f2;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 4em;
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  color: #262626;
+  margin-bottom: 10px;
 }
