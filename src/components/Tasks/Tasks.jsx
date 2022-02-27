@@ -59,12 +59,11 @@ const Tasks = () => {
       default:
         break;
     }
-
+    dispatch(
+      removeStatus({ droppableId: source.droppableId, index: source.index })
+    );
     const newItem = await dispatch(updateStatus(item));
     if (newItem) {
-      dispatch(
-        removeStatus({ droppableId: source.droppableId, index: source.index })
-      );
       dispatch(
         setNewStatus({
           droppableId: destination.droppableId,

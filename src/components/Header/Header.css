@@ -10,10 +10,6 @@ header {
   background-color: rgb(223, 223, 223);
   background-size: 100%;
   padding: 10px;
-  margin: 0;
-  align-items: baseline;
-  justify-content: space-between;
-  display: flex;
 }
 
 .logo {
@@ -49,4 +45,23 @@ header {
 
 .user:hover .user-detail {
   display: block;
+}
+.user__name {
+  font-size: 18px;
+  line-height: 15px;
+  color: #262626;
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+.user__details {
+  display: flex;
+}
+.header__container {
+  width: 100%;
+  max-width: 1470px;
+  margin: 0 auto;
+  align-items: baseline;
+  justify-content: space-between;
+  display: flex;
 }

@@ -4,6 +4,7 @@
   display: grid;
   gap: 8px;
   border-radius: 8px;
+  font-family: "Poppins", sans-serif;
 }
 .card__name {
   font-size: 18px;

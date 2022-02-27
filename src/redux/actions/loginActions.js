@@ -12,6 +12,7 @@ import {
 } from "../consts";
 import api from "../../services/api";
 import TokenService from "../../services/TokenService";
+import { usersById } from "./usersActions";
 
 export const registration = (email, password, name) => async (dispatch) => {
   try {
@@ -36,9 +37,10 @@ export const login = (email, password) => async (dispatch) => {
     });
     TokenService.setUser(response.data);
     dispatch({ type: LOGIN_SUCCESS, data: response.data });
+    dispatch(usersById(TokenService.getUserId()));
   } catch (error) {
     dispatch({ type: LOGIN_FAIL });
-    alert("Произошла ошибка " + error);
+    alert("Произошла ошибка при авторизации");
   }
 };
 

@@ -55,7 +55,7 @@ const TaskCard = ({ provided, el }) => {
         <Modal
           active={modalDelBoardActive}
           setActive={setModalDelBoardActive}
-          name={"Вы уверены, что хотите удалить доску?"}
+          name={"Вы уверены, что хотите удалить задачу?"}
         >
           <div className={style.delete__board}>
             <Button
