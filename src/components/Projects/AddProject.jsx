@@ -24,7 +24,7 @@ function AddProject({ setModalAddProjectActive }) {
   };
 
   return (
-    <Form 
+    <Form
     //name={"Новый проект"}
     >
       <InputField
@@ -40,13 +40,14 @@ function AddProject({ setModalAddProjectActive }) {
         //placeholder={"Description"}
         placeholder={"Описание проекта"}
         type={"text"}
+        maxlength={1024}
       />
-      <Button 
-        type='button' 
-        text={"Сохранить"} 
-        onClick={addNewProject} 
+      <Button
+        type='button'
+        text={"Сохранить"}
+        onClick={addNewProject}
         disabled={name === "" || description === ""}
-        />
+      />
     </Form>
   );
 }

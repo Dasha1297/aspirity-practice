@@ -44,8 +44,14 @@ const AddTask = () => {
         placeholder='Введите описание'
         type={"text"}
         width={200}
+        maxlength={1024}
       />
-      <Button color='blue' width={200} text={"Создать"} />
+      <Button
+        color='blue'
+        width={200}
+        text={"Создать"}
+        disabled={name === "" || description === ""}
+      />
     </Form>
   );
 };
