@@ -32,7 +32,7 @@ const RegistrationContainer = () => {
 
   const emailHandler = (email) => {
     setLogin(email);
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(login)) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       setValidateEmail(true);
     }
   };
