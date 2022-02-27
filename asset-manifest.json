@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/aspirity-practice/static/css/main.63afc0fe.css",
-    "main.js": "/aspirity-practice/static/js/main.4089bf08.js",
+    "main.css": "/aspirity-practice/static/css/main.09375aa1.css",
+    "main.js": "/aspirity-practice/static/js/main.bd5e8e87.js",
     "static/media/home__logo.svg": "/aspirity-practice/static/media/home__logo.f4eb843b9dab322bb27f.svg",
     "static/media/logo.svg": "/aspirity-practice/static/media/logo.b2000b575a305826f2f382384eaddd7f.svg",
     "static/media/delete.svg": "/aspirity-practice/static/media/delete.ed2f39fdaad25dc7655d.svg",
@@ -10,11 +10,11 @@
     "static/media/close.svg": "/aspirity-practice/static/media/close.4dc52bd20788c434fb9d.svg",
     "static/media/plus.svg": "/aspirity-practice/static/media/plus.6bd0d94238bd922fd531d10486d71052.svg",
     "static/media/edit.svg": "/aspirity-practice/static/media/edit.03e140ec7dcbecaf6d53.svg",
-    "main.63afc0fe.css.map": "/aspirity-practice/static/css/main.63afc0fe.css.map",
-    "main.4089bf08.js.map": "/aspirity-practice/static/js/main.4089bf08.js.map"
+    "main.09375aa1.css.map": "/aspirity-practice/static/css/main.09375aa1.css.map",
+    "main.bd5e8e87.js.map": "/aspirity-practice/static/js/main.bd5e8e87.js.map"
   },
   "entrypoints": [
-    "static/css/main.63afc0fe.css",
-    "static/js/main.4089bf08.js"
+    "static/css/main.09375aa1.css",
+    "static/js/main.bd5e8e87.js"
   ]
 }
